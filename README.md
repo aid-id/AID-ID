@@ -1,10 +1,11 @@
 # AID-ID
 
--Nomenclatura
+Nomenclatura
+============
 
 **Variables**
 -------------
-    Usaremos la nomenclatura Camelcase (inicio de variable minuscula, siguiente palabra inico en mayúscula), y en inglés
+    Usaremos la nomenclatura Camelcase, inicio de variable minuscula,siguiente palabra inico en mayúscula, y en inglés
 
     Ej: dataBase
 

@@ -1,9 +1,10 @@
 namespace aid_id{
 	class Analisis
 	{
-		int value = 0;
-		string date = "";
-		string time = "";
-		float sportIntensity = 0;
+		public int id = 0;
+		public int value = 0;
+		public DateTime realTime;
+		public int sportIntensity = 0;
 	}
 }
+

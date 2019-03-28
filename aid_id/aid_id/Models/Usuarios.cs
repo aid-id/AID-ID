@@ -36,7 +36,7 @@ namespace aid_id.Models
         public string InsuGluc { get => InsuGluc; set => InsuGluc; }
         public string InsuTotal { get => InsuTotal; set => InsuTotal; }
 
-
+        //modificacción de prueba 
         public int modificacion = 100;
 
 

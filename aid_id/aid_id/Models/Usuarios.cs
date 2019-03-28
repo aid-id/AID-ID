@@ -37,5 +37,8 @@ namespace aid_id.Models
         public string InsuTotal { get => InsuTotal; set => InsuTotal; }
 
 
+        public int modificacion = 100;
+
+
     }
 }

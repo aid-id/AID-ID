@@ -2,10 +2,10 @@ USE db_diabetes;
 -- --------------------------------------------------------------------------
 -- CREATE TABLE USUARIOS IF NOT EXISTS
 -- --------------------------------------------------------------------------
-IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'usuarios')
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Usuarios')
 	BEGIN
 		PRINT '> La tabla USUARIOS creada'
-		CREATE TABLE usuarios
+		CREATE TABLE Usuarios
 		( 
 			id_usuario bigint IDENTITY PRIMARY KEY ,
 			nombre varchar(25) NOT NULL,
@@ -30,10 +30,10 @@ ELSE
 -- --------------------------------------------------------------------------
 -- CREATE TABLE ANALISIS IF NOT EXIST
 -- --------------------------------------------------------------------------
-IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'analisis')
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Analisis')
 	BEGIN
 		PRINT '> La tabla ANALISIS creada'
-		CREATE TABLE analisis
+		CREATE TABLE Analisis
 		( 
 			id_analisis bigint PRIMARY KEY IDENTITY,
 			valor tinyint  NOT NULL,
@@ -61,10 +61,10 @@ select * from analisis;
 -- --------------------------------------------------------------------------
 -- CREATE TABLE ALIMENTOS IF NOT EXIST
 -- --------------------------------------------------------------------------
-IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'alimentos')
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Alimentos')
 	BEGIN
 		PRINT '> La tabla ALIMENTOS creada'
-		CREATE TABLE alimentos
+		CREATE TABLE Alimentos
 		( 
 			id_alimento bigint PRIMARY KEY IDENTITY,
 			nombre varchar(100) NOT NULL,
@@ -88,10 +88,10 @@ SELECT * FROM alimentos;
 -- --------------------------------------------------------------------------
 -- CREATE TABLE COMIDAS IF NOT EXIST
 -- --------------------------------------------------------------------------
-IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'comidas')
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Comidas')
 	BEGIN
 		PRINT '> La tabla COMIDAS creada'
-		CREATE TABLE comidas
+		CREATE TABLE Comidas
 		( 
 			id_comida bigint PRIMARY KEY IDENTITY,
 			fecha_hora datetime NOT NULL,
@@ -118,10 +118,10 @@ SELECT * FROM comidas;
 -- --------------------------------------------------------------------------
 -- CREATE TABLE COMIDAS_ALIMENTOS (N:M)
 -- --------------------------------------------------------------------------
-IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'comidas_alimentos')
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Comidas_alimentos')
 	BEGIN
 		PRINT '> La tabla COMIDAS_ALIMENTOS (N:M) creada'
-		CREATE TABLE comidas_alimentos
+		CREATE TABLE Comidas_alimentos
 		( 
 			id_comidas_alimentos bigint PRIMARY KEY IDENTITY,
 			id_comida bigint,

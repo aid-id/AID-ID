@@ -13,5 +13,19 @@ namespace aid_id.Controllers
         {
             return View();
         }
+
+        // GET: SingIn
+        public ActionResult SingIn()
+        {
+            return View();
+
+        }
+
+        // GET: SingUp
+        public ActionResult SingUp()
+        {
+            return View();
+
+        }
     }
 }

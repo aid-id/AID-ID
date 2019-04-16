@@ -4,8 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+<<<<<<< HEAD
       <Diagram DiagramId="483d633fc47249d4bf900a7ad78bf52f" Name="Diagram1" ZoomLevel="40">
         <EntityTypeShape EntityType="db_diabetesModel.Alimentos" Width="1.5" PointX="9.625" PointY="2" IsExpanded="true" />
+=======
+      <Diagram DiagramId="56762d72b37648c9908ba345b77f3ff9" Name="Diagram1">
+        <EntityTypeShape EntityType="db_diabetesModel.Alimentos" Width="1.5" PointX="9.875" PointY="1.75" IsExpanded="true" />
+>>>>>>> 9beb18f2d79b1691fbc13ad8bd6eba1c16362b63
         <EntityTypeShape EntityType="db_diabetesModel.Analisis" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="db_diabetesModel.Comidas" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="db_diabetesModel.Comidas_alimentos" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />

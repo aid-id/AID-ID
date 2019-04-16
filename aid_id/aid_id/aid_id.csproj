@@ -143,9 +143,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\SingIn\Index.cshtml" />
+    <Content Include="Views\Sings\SingIn.cshtml" />
     <Content Include="Views\Sings\Index.cshtml" />
-    <Content Include="Views\SingUp\Index.cshtml" />
+    <Content Include="Views\Sings\SingUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

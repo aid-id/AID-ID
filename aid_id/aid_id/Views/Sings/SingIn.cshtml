@@ -8,8 +8,8 @@
     <div id="blockSingInup">
         <label class="inTittle">PASSWORD</label>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" id="inForms" aria-describedby="basic-addon3"
-                   value="Introduzca su contraseña">
+            <input type="password" id="password" name="inPass" class="form-control" data-toggle="password" placeholder="Introduzca su contraseña">
+            <input type="password" class="form-control" placeholder="Introduzca su contraseña">
         </div>
         <div>
             <a id="blockPassFor" href=""><i>He olvidado mi contraseña</i></a>
@@ -18,3 +18,6 @@
     </div>
 </form>
 
+<script type="text/javascript">
+    $("#password").password('toggle');
+</script>

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SingUp";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,9 +9,10 @@
         <div>
 
             <div class="input-group mb-3">
-                <label id="labLat" class="inTittle">Nombre</label>
-                <input id="inLat" type="text" class="form-control" id="inForms" aria-describedby="basic-addon3"
-                       value="Introduzca su nombre">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Nombre</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Indique su nombre" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
     </div>

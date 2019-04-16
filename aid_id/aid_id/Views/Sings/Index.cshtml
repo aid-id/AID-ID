@@ -8,11 +8,13 @@
     <div id="blockSingInup">
         <label class="inTittle">E-MAIL</label>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" id="inForms" aria-describedby="basic-addon3"
-                   value="Introduzca su email">
+            <input type="text" class="form-control"  aria-describedby="basic-addon3"
+                   placeholder="Introduzca su e-mail">
         </div>
         <div id="sendButton">
-            <input type="button" class="btn btn-light" value="Op1" onclick="window.location.href='@Url.Action("SingIn","Sings")';" />
+            <input type="button" name="inUser" class="btn btn-light" value="SingIn" onclick="window.location.href='@Url.Action("SingIn","Sings")';" />
+
+            <input type="button" class="btn btn-light" value="SingUp" onclick="window.location.href='@Url.Action("SingUp","Sings")';" />
         </div>
         
     </div>

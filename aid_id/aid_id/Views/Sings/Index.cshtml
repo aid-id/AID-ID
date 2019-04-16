@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Sings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="blockForm">
+    <div id="blockSingInup">
+        <label class="inTittle">E-MAIL</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="inForms" aria-describedby="basic-addon3"
+                   value="Introduzca su email">
+        </div>
+        <div id="sendButton">
+
+            <input type="button" value="Sing" onclick="window.location.href='@Url.Action("Index", "SingInController" )';" />
+        </div>
+    </div>
+</form>

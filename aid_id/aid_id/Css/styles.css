@@ -1,0 +1,67 @@
+@media (min-width: 1200px) {}
+
+        /* Anything Smaller than Large  */
+        @media (max-width: 500px) {
+            #menuProm {
+                background-color: brown;
+            }
+
+            #menuAli {
+                background-color: darkolivegreen;
+            }
+
+            #menuAjus {
+                background-color: darkslateblue;
+            }
+        }
+
+        .navColorbar {
+            color: whitesmoke;
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+
+        .bodyCss {
+            background-color: lightblue;
+        }
+
+        .footerDiv {
+            background-color: darkslategrey;
+            width: 100%;
+            height: 5%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+
+        #blockForm {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #blockSingInup
+        {
+            margin-top: 50%;
+        }
+
+        #blockAnalysis
+        {
+            margin-top: 5%;
+        }
+
+        #sendButton {
+            position: relative;
+            float: right;
+        }
+
+        #labLat {
+            position: relative;
+            float: right;
+        }
+
+        #inLat {
+            position: relative;
+            float: left;
+        }

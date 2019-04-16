@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - AID-ID</title>
+    <!-- <link href="~/Content/Site.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Css/styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body class="bodyCss">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+            <a class="navbar-brand" href="#">AID-ID</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <div class="navColorbar" id="menuProm">
+                        <a class="nav-item nav-link active" href="#">PROMEDIOS <span class="sr-only">(current)</span></a>
+                    </div>
+                    <div class="navColorbar" id="menuAli">
+                        <a class="nav-item nav-link" href="#">ALIMENTOS</a>
+                    </div>
+                    <div class="navColorbar" id="menuAjus">
+                        <a class="nav-item nav-link" href="#">AJUSTES</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="footerDiv">
+                <p>&copy; @DateTime.Now.Year - AID-ID Application</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -494,40 +494,35 @@ INSERT INTO ALIMENTOS (nombre, carbohidratos, proteinas, grasas) VALUES ('Yogurt
 INSERT INTO ALIMENTOS (nombre, carbohidratos, proteinas, grasas) VALUES ('Zanahoria', 9, 1.2, 0.3);
 
 SELECT * FROM ALIMENTOS;
+DELETE FROM Alimentos;
 -- --------------------------------------------------------------------------
 -- 10 INSERT COMIDAS
 -- --------------------------------------------------------------------------
 INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'DESAYUNO', 500, 1);
-INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'ALMUERZO', 500, 2);
+INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'POST DESAYUNO', 500, 2);
 INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'COMIDA', 500, 3);
 INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'MERIENDA', 500, 4);
 INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'CENA', 500, 5);
-INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'VERMUT', 500, 6);
-INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'PISCOLABI', 500, 7);
 INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'OTROS', 500, 8);
-INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'DESAYUNO', 500, 9);
-INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'ALMUERZO', 500, 10);
+INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'DESAYUNO', 500, NULL);
+INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'POST DESAYUNO', 500, NULL);
 INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'COMIDA', 500, NULL);
 INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'MERIENDA', 500, NULL);
 INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'CENA', 500, NULL);
-INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'VERMUT', 500, NULL);
-INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'PISCOLABI', 500, NULL);
 INSERT INTO COMIDAS (fecha_hora, tipocomida, carbo_totales, id_analisis) VALUES (SYSDATETIME(), 'OTROS', 500, NULL);
 
-SELECT * FROM COMIDAS;
+SELECT * FROM Comidas;
 -- --------------------------------------------------------------------------
 -- 10 INSERT COMIDAS_ALIMENTOS
 -- --------------------------------------------------------------------------
 INSERT INTO COMIDAS_ALIMENTOS (id_comida, id_alimento) VALUES (1, 1);
 INSERT INTO COMIDAS_ALIMENTOS (id_comida, id_alimento) VALUES (1, 2);
 INSERT INTO COMIDAS_ALIMENTOS (id_comida, id_alimento) VALUES (1, 3);
-INSERT INTO COMIDAS_ALIMENTOS (id_comida, id_alimento) VALUES (2, 2);
-INSERT INTO COMIDAS_ALIMENTOS (id_comida, id_alimento) VALUES (2, 3);
-INSERT INTO COMIDAS_ALIMENTOS (id_comida, id_alimento) VALUES (2, 4);
+
 INSERT INTO COMIDAS_ALIMENTOS (id_comida, id_alimento) VALUES (3, 1);
 INSERT INTO COMIDAS_ALIMENTOS (id_comida, id_alimento) VALUES (3, 5);
 INSERT INTO COMIDAS_ALIMENTOS (id_comida, id_alimento) VALUES (4, 8);
 INSERT INTO COMIDAS_ALIMENTOS (id_comida, id_alimento) VALUES (4, 6);
 
 
-SELECT * FROM COMIDAS_ALIMENTOS;
+

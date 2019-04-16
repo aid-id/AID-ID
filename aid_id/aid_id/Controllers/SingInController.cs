@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace aid_id.Controllers
 {
-    public class SingsController : Controller
+    public class SingInController : Controller
     {
-        // GET: Sings
+        // GET: SingIn
         public ActionResult Index()
         {
             return View();

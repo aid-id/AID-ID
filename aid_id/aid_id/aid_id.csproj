@@ -177,10 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-<<<<<<< HEAD
-=======
-    <Folder Include="Models\BBDD\" />
->>>>>>> 9beb18f2d79b1691fbc13ad8bd6eba1c16362b63
     <Folder Include="Views\Analysis\" />
   </ItemGroup>
   <ItemGroup>

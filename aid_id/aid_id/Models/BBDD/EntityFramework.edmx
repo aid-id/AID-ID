@@ -359,11 +359,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-<<<<<<< HEAD
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
-=======
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
->>>>>>> 9beb18f2d79b1691fbc13ad8bd6eba1c16362b63
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

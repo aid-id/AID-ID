@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Sings";
+    ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,9 +12,9 @@
                    placeholder="Introduzca su e-mail">
         </div>
         <div id="sendButton">
-            <input type="button" name="inUser" class="btn btn-light" value="SingIn" onclick="window.location.href='@Url.Action("SingIn","Sings")';" />
+            <input type="button" name="inUser" class="btn btn-light" value="SingIn" onclick="window.location.href='@Url.Action("SingIn","Login")';" />
 
-            <input type="button" class="btn btn-light" value="SingUp" onclick="window.location.href='@Url.Action("SingUp","Sings")';" />
+            <input type="button" class="btn btn-light" value="SingUp" onclick="window.location.href='@Url.Action("SingUp","Login")';" />
         </div>
         
     </div>

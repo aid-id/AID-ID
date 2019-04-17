@@ -117,8 +117,23 @@
     <Content Include="Css\styles.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\BBDD\EntityFramework.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityFramework.Context2.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BBDD\EntityFramework.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityFramework2.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\BBDD\EntityFramework.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EntityFramework2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BBDD\EntityFramework.edmx.diagram">
+      <DependentUpon>EntityFramework.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -131,6 +146,40 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BBDD\Alimentos.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BBDD\Analisis.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BBDD\Comidas.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BBDD\Comidas_alimentos.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BBDD\EntityFramework.Context.cs" />
+    <Compile Include="Models\BBDD\EntityFramework.cs" />
+    <Compile Include="Models\BBDD\EntityFramework.Designer.cs">
+      <DependentUpon>EntityFramework.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BBDD\EntityFramework1.cs" />
+    <Compile Include="Models\BBDD\EntityFramework1.Designer.cs">
+      <DependentUpon>EntityFramework1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BBDD\EntityFramework2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BBDD\EntityFramework2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityFramework.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BBDD\Usuarios.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -155,8 +204,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\BBDD\" />
     <Folder Include="Views\Analysis\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

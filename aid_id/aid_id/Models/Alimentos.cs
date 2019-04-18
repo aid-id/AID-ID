@@ -17,13 +17,13 @@ namespace aid_id.Models
         public long Id_alimento { get; set; }
 
         // Creacion de todos los campos de la tabla
-        public string nombre { get; set; }
+        public string Nombre { get; set; }
 
-        public decimal carbohidratos { get; set; }
+        public decimal Carbohidratos { get; set; }
 
-        public decimal proteinas { get; set; }
+        public decimal Proteinas { get; set; }
 
-        public decimal grasas { get; set; }
+        public decimal Grasas { get; set; }
 
 
         // "Collection navigation property" de tipo comida

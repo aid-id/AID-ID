@@ -17,13 +17,13 @@ namespace aid_id.Models
         public long Id_comida { get; set; }
 
         // Creacion de todos los campos de la tabla
-        public System.DateTime fecha_hora { get; set; }
+        public System.DateTime Fecha_hora { get; set; }
 
-        public string tipocomida { get; set; }
+        public string Tipocomida { get; set; }
 
-        public Nullable<decimal> carbo_totales { get; set; }
+        public Nullable<decimal> Carbo_totales { get; set; }
 
-        public Nullable<long> id_analisis { get; set; }
+        public Nullable<long> Id_analisis { get; set; }
 
 
         // "Collection navigation property" de tipo alimentos

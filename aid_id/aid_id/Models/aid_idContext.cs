@@ -6,7 +6,7 @@ using System.Web;
 
 namespace aid_id.Models
 {
-    public class aid_idContext : DbContext
+    public class Aid_idContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -15,12 +15,16 @@ namespace aid_id.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public aid_idContext() : base("name=aid_idContext")
+        public Aid_idContext() : base("name=aid_idContext")
         {
         }
 
         public System.Data.Entity.DbSet<aid_id.Models.Analisis> Analisis { get; set; }
 
         public System.Data.Entity.DbSet<aid_id.Models.Usuarios> Usuarios { get; set; }
+
+        public System.Data.Entity.DbSet<aid_id.Models.Alimentos> Alimentos { get; set; }
+
+        public System.Data.Entity.DbSet<aid_id.Models.Comidas> Comidas { get; set; }
     }
 }

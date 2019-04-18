@@ -128,12 +128,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AnalisisController.cs" />
-    <Compile Include="Controllers\AnalysisController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -145,6 +145,10 @@
     <Compile Include="Migrations\201904181028498_new_tables.cs" />
     <Compile Include="Migrations\201904181028498_new_tables.Designer.cs">
       <DependentUpon>201904181028498_new_tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904181151525_checkup.cs" />
+    <Compile Include="Migrations\201904181151525_checkup.Designer.cs">
+      <DependentUpon>201904181151525_checkup.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\aid_idContext.cs" />
@@ -175,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\BBDD\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904180934585_Inital.resx">
@@ -183,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904181028498_new_tables.resx">
       <DependentUpon>201904181028498_new_tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181151525_checkup.resx">
+      <DependentUpon>201904181151525_checkup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

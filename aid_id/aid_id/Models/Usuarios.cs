@@ -1,41 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
 
 namespace aid_id.Models
 {
-    public class Usuarios
+    public partial class Usuarios
     {
         // Primary key. Entity Framework siempre buscara por una palabra que contenga ID
         [Key]
         public long Id_usuario { get; set; }
 
         // Creacion de todos los campos de la tabla
-        public string nombre { get; set; }
+        public string Nombre { get; set; }
 
-        public string apellido { get; set; }
+        public string Apellido { get; set; }
 
-        public string usuario { get; set; }
+        public string Usuario { get; set; }
 
-        public string passcode { get; set; }
+        public string Passcode { get; set; }
 
-        public string correo { get; set; }
+        public string Correo { get; set; }
 
-        public byte edad { get; set; }
+        public byte Edad { get; set; }
 
-        public byte peso { get; set; }
+        public byte Peso { get; set; }
 
-        public decimal altura { get; set; }
+        public decimal Altura { get; set; }
 
-        public byte glucemia_min { get; set; }
+        public byte Glucemia_min { get; set; }
 
-        public byte glucemia_max { get; set; }
+        public byte Glucemia_max { get; set; }
 
-        public byte r_insulina_carb { get; set; }
+        public byte R_insulina_carb { get; set; }
 
-        
+        public byte R_insulina_gluc { get; set; }
+
+        public short Total_insulina_diaria { get; set; }
+
+        // "Collection navigation property" de tipo analisis
+        public virtual ICollection<Analisis> Analisis { get; set; }
     }
 }

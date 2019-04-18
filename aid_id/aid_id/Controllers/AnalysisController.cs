@@ -9,7 +9,13 @@ namespace aid_id.Controllers
     public class AnalysisController : Controller
     {
         // GET: Analysis
-        public ActionResult Index()
+        public ActionResult Analysis()
+        {
+            return View();
+        }
+
+        // GET: InsulineResult
+        public ActionResult InsulineResult()
         {
             return View();
         }

@@ -146,6 +146,8 @@
     <Content Include="Views\Login\SingIn.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\SingUp.cshtml" />
+    <Content Include="Views\Analysis\Result.cshtml" />
+    <Content Include="Views\Analysis\Analysis.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -155,8 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\BBDD\" />
-    <Folder Include="Views\Analysis\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

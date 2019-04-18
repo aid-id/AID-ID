@@ -122,16 +122,40 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AnalysisController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904180934585_Inital.cs" />
+    <Compile Include="Migrations\201904180934585_Inital.Designer.cs">
+      <DependentUpon>201904180934585_Inital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904181028498_new_tables.cs" />
+    <Compile Include="Migrations\201904181028498_new_tables.Designer.cs">
+      <DependentUpon>201904181028498_new_tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904181151525_checkup.cs" />
+    <Compile Include="Migrations\201904181151525_checkup.Designer.cs">
+      <DependentUpon>201904181151525_checkup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\aid_idContext.cs" />
+    <Compile Include="Models\Alimentos.cs" />
+    <Compile Include="Models\Analisis.cs" />
+    <Compile Include="Models\Comidas.cs" />
+    <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,8 +170,6 @@
     <Content Include="Views\Login\SingIn.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\SingUp.cshtml" />
-    <Content Include="Views\Analysis\Analysis.cshtml" />
-    <Content Include="Views\Analysis\InsulineResult.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,7 +179,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\BBDD\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904180934585_Inital.resx">
+      <DependentUpon>201904180934585_Inital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181028498_new_tables.resx">
+      <DependentUpon>201904181028498_new_tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181151525_checkup.resx">
+      <DependentUpon>201904181151525_checkup.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

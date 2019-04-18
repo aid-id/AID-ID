@@ -1,12 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
-
+using System.Linq;
+using System.Web;
 
 namespace aid_id.Models
 {
-    public partial class Usuarios
+    public class Usuarios
     {
         // Primary key. Entity Framework siempre buscara por una palabra que contenga ID
         [Key]
@@ -35,11 +36,6 @@ namespace aid_id.Models
 
         public byte r_insulina_carb { get; set; }
 
-        public byte r_insulina_gluc { get; set; }
-
-        public short total_insulina_diaria { get; set; }
-
-        // "Collection navigation property" de tipo analisis
-        public virtual ICollection<Analisis> Analisis { get; set; }
+        
     }
 }

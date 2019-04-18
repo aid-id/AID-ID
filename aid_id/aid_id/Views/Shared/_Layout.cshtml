@@ -14,8 +14,13 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
 
+    <!-- JAVASCRIPT LIBRERY FOR MAKE GRAPHICS -->
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
+
+
 </head>
-<body class="bodyCss">
+<body class="body-background-class">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
             <a class="navbar-brand" href=@Url.Action("Index","Login")>AID-ID</a>
@@ -25,13 +30,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <div class="navColorbar" id="menuProm">
+                    <div class="nav-color-class" id="menu-average-id">
                         <a class="nav-item nav-link active" href="#">PROMEDIOS <span class="sr-only">(current)</span></a>
                     </div>
-                    <div class="navColorbar" id="menuAli">
+                    <div class="nav-color-class" id="menu-food-id">
                         <a class="nav-item nav-link" href="#">ALIMENTOS</a>
                     </div>
-                    <div class="navColorbar" id="menuAjus">
+                    <div class="nav-color-class" id="menu-settings-id">
                         <a class="nav-item nav-link" href="#">AJUSTES</a>
                     </div>
                 </div>
@@ -40,10 +45,13 @@
     </header>
 
     <div class="container body-content">
-        @RenderBody()
-        <hr />
+        <div class="body-center-block-class">
+            @RenderBody()
+        </div>
+        
+        
         <footer>
-            <div class="footerDiv">
+            <div class="footer-content-class">
                 <p>&copy; @DateTime.Now.Year - AID-ID Application</p>
             </div>
         </footer>

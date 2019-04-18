@@ -166,11 +166,6 @@
     <Content Include="Views\Login\SingIn.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\SingUp.cshtml" />
-    <Content Include="Views\Analisis\Create.cshtml" />
-    <Content Include="Views\Analisis\Delete.cshtml" />
-    <Content Include="Views\Analisis\Details.cshtml" />
-    <Content Include="Views\Analisis\Edit.cshtml" />
-    <Content Include="Views\Analisis\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -180,10 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Analysis\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Folder Include="Models\BBDD\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904180934585_Inital.resx">

@@ -7,6 +7,7 @@ namespace aid_id.Migrations
     {
         public override void Up()
         {
+            RenameTable(name: "dbo.AlimentosComidas", newName: "ComidasAlimentos");
             DropIndex("dbo.Analisis", new[] { "id_usuario" });
             DropIndex("dbo.Comidas", new[] { "id_analisis" });
             DropPrimaryKey("dbo.ComidasAlimentos");

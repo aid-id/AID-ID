@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-
-namespace aid_id.Models.BBDD
+namespace aid_id.Models
 {
     public partial class Comidas
     {
@@ -13,7 +13,8 @@ namespace aid_id.Models.BBDD
         }
 
         // Primary key. Entity Framework siempre buscara por una palabra que contenga ID
-        public long id_comida { get; set; }
+        [Key]
+        public long Id_comida { get; set; }
 
         // Creacion de todos los campos de la tabla
         public System.DateTime fecha_hora { get; set; }

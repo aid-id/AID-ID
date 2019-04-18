@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 
 
-namespace aid_id.Models.BBDD
+namespace aid_id.Models
 {
     public partial class Usuarios
     {
         // Primary key. Entity Framework siempre buscara por una palabra que contenga ID
-        public long id_usuario { get; set; }
+        [Key]
+        public long Id_usuario { get; set; }
 
         // Creacion de todos los campos de la tabla
         public string nombre { get; set; }

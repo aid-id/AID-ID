@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace aid_id.Models.BBDD
+namespace aid_id.Models
 {
     public partial class Analisis
     {
         // Primary key. Entity Framework siempre buscara por una palabra que contenga ID
-        public long id_analisis { get; set; }
+        [Key]
+        public long Id_analisis { get; set; }
 
         // Creacion de todos los campos de la tabla
         public byte valor { get; set; }

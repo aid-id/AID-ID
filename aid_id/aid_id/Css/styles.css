@@ -6,7 +6,15 @@
 
 
         /* Anything Smaller than Large  */
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
+
+            #btn-profile-complete-id {
+                visibility: visible;
+            }
+            #btn-profile-icon-id {
+                display: none;
+            }
+
             #menu-average-id {
                 background-color: brown;
             }
@@ -19,6 +27,107 @@
                 background-color: darkslateblue;
             }
         }
+
+        #btn-profile-complete-id {
+                display:none;
+        }
+
+        #btn-profile-icon-id {
+            visibility: visible;
+        }
+
+        .nav-color-class {
+            color: whitesmoke;
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+
+        .body-background-class {
+            background-color: lightblue;
+        }
+
+        .footer-content-class {
+            background-color: darkslategrey;
+            width: 100%;
+            height: 5%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+
+        .body-center-block-class {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            margin-top:10%
+        }
+
+        /*____________________________________________________________________________________*/
+
+        /*                                              */
+
+/*
+        #blockSingInup
+        {
+            margin-top: 50%;
+        }
+
+            */
+        #blockAnalysis
+        {
+            margin-top: 5%;
+        }
+
+        #sendButton {
+            position: relative;
+            float: right;
+        }
+
+        #labLat {
+            position: relative;
+            color: red;
+            float: right;
+            margin: 1%;
+        }
+
+        #inLat {
+            position: relative;
+            float: left;
+            margin: 1%;
+        }@media (min-width: 1200px) {}
+
+
+        /*_________________________________________________________________________*/
+        /*       LAYOUT COMMON STYLE                                            */
+
+
+        /* Anything Smaller than Large  */
+        @media (max-width: 600px) {
+
+           
+            #menu-average-id {
+                background-color: brown;
+            }
+
+            #menu-food-id {
+                background-color: darkolivegreen;
+            }
+
+            #menu-settings-id {
+                background-color: darkslateblue;
+            }
+        }
+
+.div-name-span-class {
+
+    margin-left:2%;
+}
+.btn-profile-icon-class {
+    display: inline-block;
+    position: relative;
+    float: right;
+}
 
         .nav-color-class {
             color: whitesmoke;

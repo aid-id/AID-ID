@@ -18,26 +18,44 @@
     <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
 
+    <!--  FONT AWESOME  LIBRERY FOR ICON BUTTONS   -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 <body class="body-background-class">
     <header>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+
             <a class="navbar-brand" href=@Url.Action("Index","Login")>AID-ID</a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <div class="nav-color-class" id="menu-average-id">
-                        <a class="nav-item nav-link active" href="#">PROMEDIOS <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active" onclick="window.location.href='@Url.Action("Analysis","Analysis")';">PROMEDIOS <span class="sr-only">(current)</span></a>
                     </div>
                     <div class="nav-color-class" id="menu-food-id">
                         <a class="nav-item nav-link" href="#">ALIMENTOS</a>
                     </div>
                     <div class="nav-color-class" id="menu-settings-id">
                         <a class="nav-item nav-link" href="#">AJUSTES</a>
+                    </div>
+                    <div class="btn-group dropright pull-right">
+                        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Info</a>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
                     </div>
                 </div>
             </div>

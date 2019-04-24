@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -15,9 +16,23 @@ namespace aid_id.Controllers.Alimentos
         private Aid_idContext db = new Aid_idContext();
 
         // GET: Alimentos
-        public ActionResult Index()
+        public ActionResult Index(string Find)
         {
-            return View(db.Alimentos.ToList());
+            if (Find == null || Find.Equals(""))
+            {
+                return View(db.Alimentos.ToList());
+            }
+            var temp = db.Alimentos.SqlQuery("Select * From Alimentos Where nombre Like '%" + Find + "%'").ToList();
+            return View(temp);
+            
+            //if (searchString == "")
+            //{
+            //}
+            //if (alimentos == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(db.Alimentos.SqlQuery("Select * From Alimentos Where nombre Like '" + searchString + "'"));
         }
 
         // GET: Alimentos/Details/5

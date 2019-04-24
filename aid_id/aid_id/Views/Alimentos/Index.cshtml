@@ -8,9 +8,13 @@
 <h2>Alimentos</h2>
 
 <p>
-    @*@Html.ActionLink("Añadir", "Create")*@
     <button class="btn btn-light" onclick="window.location.href='@Url.Action("Create","Alimentos")';">Añadir</button>
 </p>
+<form asp-controller="Alimentos" asp-action="Search" method="get">
+    <input type="text" name="Find">
+    <button class="btn btn-light" onclick="window.location.href='@Url.Action("Index","Alimentos")';">Filtrar</button>
+
+</form>
 <table class="table">
     <tr>
         <th>

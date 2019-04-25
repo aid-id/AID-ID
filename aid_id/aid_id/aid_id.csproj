@@ -135,6 +135,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Alimentos\AlimentosController.cs" />
+    <Compile Include="Controllers\InsulineResultController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\Sha1.cs" />
     <Compile Include="Global.asax.cs">

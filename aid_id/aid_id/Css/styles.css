@@ -8,6 +8,13 @@
         @media (min-width: 1200px) {
         }
 
+@media (min-width: 1000px) {
+
+    .div-food-class {
+    font-size:medium;
+    }
+
+}
         /* Anything Smaller than Large  */
         @media (max-width: 600px) {
 
@@ -67,7 +74,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 70%;
+            width: 90%;
             margin-top:10%
         }
 
@@ -97,6 +104,35 @@
             margin: 1%;
         }
 
+
+        /*___________________________________________________________________________-*/
+
+
+.inp-paginator-class {
+    margin: 60px auto;
+    text-align: center;
+}
+
+.h1-paginator-class {
+    margin-bottom: 1.25em;
+}
+
+#exPagination {
+    display: inline-block;
+    margin-bottom: 1.75em;
+}
+
+    #exPagination li {
+        display: inline-block;
+    }
+
+.page-content {
+    background: #eee;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    max-width: 660px;
+}
         /*____________________________________________________________________________________*/
                     
         /*                INPUT BOX FONT AWEOME & ERRORS CONTROLERS DAVID                     */

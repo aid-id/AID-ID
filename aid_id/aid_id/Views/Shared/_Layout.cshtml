@@ -4,13 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - AID-ID</title>
+
     <!-- <link href="~/Content/Site.css" rel="stylesheet" type="text/css" /> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="~/Css/styles.css">
 
+
+    <!--  JQUERY     -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
+
+    <!-- BOOTSTRAP: JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js"></script>
+
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
 
@@ -18,8 +25,14 @@
     <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
 
-    <!--  FONT AWESOME  LIBRERY FOR ICON BUTTONS   -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- FONT AWESOME LIBRERY FOR ICON BUTTONS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+   
+    <!--   PAGINATOR    -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
 
 
 </head>
@@ -47,7 +60,7 @@
                         <a class="nav-item nav-link" href="#">AJUSTES</a>
                     </div>
                     <div class="nav-color-class" id="menu-settings-id">
-                        <a class="nav-item nav-link" onclick="window.location.href='@Url.Action("InsulineResults","InsulineResults")';">Resultados(pruebas)</a>
+                        <a class="nav-item nav-link" onclick="window.location.href='@Url.Action("InsulineResult","InsulineResult")';">Resultados(pruebas)</a>
                     </div>
                     <div class="btn-group dropright pull-right">
                         <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -22,17 +22,8 @@ namespace aid_id.Controllers.Alimentos
             {
                 return View(db.Alimentos.ToList());
             }
-            var temp = db.Alimentos.SqlQuery("Select * From Alimentos Where nombre Like '%" + Find + "%'").ToList();
-            return View(temp);
-            
-            //if (searchString == "")
-            //{
-            //}
-            //if (alimentos == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            //return View(db.Alimentos.SqlQuery("Select * From Alimentos Where nombre Like '" + searchString + "'"));
+            var query = db.Alimentos.SqlQuery("Select * From Alimentos Where nombre Like '%" + Find + "%'").ToList();
+            return View(query);
         }
 
         // GET: Alimentos/Details/5

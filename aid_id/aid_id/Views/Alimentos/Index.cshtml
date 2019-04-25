@@ -17,19 +17,19 @@
 </form>
 <table class="table">
     <tr>
-        <th>
+        <th class="cabecera">
             @Html.DisplayNameFor(model => model.Nombre)
         </th>
-        <th>
+        <th class="cabecera">
             @Html.DisplayNameFor(model => model.Carbohidratos)
         </th>
-        <th>
+        <th class="cabecera">
             @Html.DisplayNameFor(model => model.Proteinas)
         </th>
-        <th>
+        <th class="cabecera">
             @Html.DisplayNameFor(model => model.Grasas)
         </th>
-        <th></th>
+        <th class="cabecera"></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -47,7 +47,6 @@
             @Html.DisplayFor(modelItem => item.Grasas)
         </td>
         <td>
-            @*@Html.ActionLink("Editar", "Edit", new { id=item.Id_alimento })*@
             <button class="btn btn-light" onclick="window.location.href='@Url.Action("Edit","Alimentos",new { id=item.Id_alimento })';">Editar</button>
         </td>
     </tr>

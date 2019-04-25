@@ -38,13 +38,16 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <div class="nav-color-class" id="menu-average-id">
-                        <a class="nav-item nav-link active" onclick="window.location.href='@Url.Action("Analysis","Analysis")';">PROMEDIOS <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active" onclick="window.location.href='@Url.Action("","")';">PROMEDIOS <span class="sr-only">(current)</span></a>
                     </div>
                     <div class="nav-color-class" id="menu-food-id">
                         <a class="nav-item nav-link" href="#">ALIMENTOS</a>
                     </div>
                     <div class="nav-color-class" id="menu-settings-id">
                         <a class="nav-item nav-link" href="#">AJUSTES</a>
+                    </div>
+                    <div class="nav-color-class" id="menu-settings-id">
+                        <a class="nav-item nav-link" onclick="window.location.href='@Url.Action("InsulineResults","InsulineResults")';">Resultados(pruebas)</a>
                     </div>
                     <div class="btn-group dropright pull-right">
                         <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -68,7 +71,7 @@
         </div>
         
         
-        <footer>
+        <footer class="fixed-bottom">
             <div class="footer-content-class">
                 <p>&copy; @DateTime.Now.Year - AID-ID Application</p>
             </div>

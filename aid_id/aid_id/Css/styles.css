@@ -133,3 +133,32 @@
     width: 100%;
     max-width: 660px;
 }
+        /*____________________________________________________________________________________*/
+                    
+        /*                INPUT BOX FONT AWEOME & ERRORS CONTROLERS DAVID                     */
+
+        .input-text-error-class::placeholder {
+            color: red;
+        }
+
+        .input-text-error-class {
+            color: red;
+        }
+
+        .input-button-submit-class {
+            border: solid 1px;
+        }
+
+        .input-button-login-class {
+            padding: 10px;
+            font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+        }
+
+        .div-align-center-class {
+            display: grid;
+            min-height: 60vh;
+            align-items: center;
+        }

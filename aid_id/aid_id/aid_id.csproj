@@ -134,7 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\InsulineResultsController.cs" />
+    <Compile Include="Controllers\Alimentos\AlimentosController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,12 +171,11 @@
     <Content Include="Views\Login\SingIn.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\SingUp.cshtml" />
-    <Content Include="Views\InsulineResults\InsulineResults.cshtml" />
-    <Content Include="Views\InsulineResults\Create.cshtml" />
-    <Content Include="Views\InsulineResults\Delete.cshtml" />
-    <Content Include="Views\InsulineResults\Details.cshtml" />
-    <Content Include="Views\InsulineResults\Edit.cshtml" />
-    <Content Include="Views\InsulineResults\Index.cshtml" />
+    <Content Include="Views\Alimentos\Create.cshtml" />
+    <Content Include="Views\Alimentos\Delete.cshtml" />
+    <Content Include="Views\Alimentos\Details.cshtml" />
+    <Content Include="Views\Alimentos\Edit.cshtml" />
+    <Content Include="Views\Alimentos\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,21 +1,21 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";}
-<!--FORM START-->
-<form id="IndexForm" action="/Login/SingIn/" method="post">
-    @Html.AntiForgeryToken()
-    <div class="div-align-center-class">
-        <div id="blockSingInup">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Correo:</span>
-                </div>
-                <input type="text" class="form-control fas fa-user input-button-login-class" aria-describedby="basic-addon3"
-                       placeholder="&#xf007; Introduzca su e-mail" id="inputEmail" name="inputEmail">
-                <input type="submit" class="btn btn-light input-button-submit-class" name="btnEmail" value="Enviar" id="inputEmail" />
-            </div>
-            <p class="input-text-error-class" id="error">@ViewBag.Error</p>
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form >
+    <div id="blockSingInup">
+        <label class="inTittle">E-MAIL</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control"  aria-describedby="basic-addon3"
+                   placeholder="Introduzca su e-mail">
         </div>
+        <div id="sendButton">
+            <input type="button" name="inUser" class="btn btn-light" value="SingIn" onclick="window.location.href='@Url.Action("SingIn","Login")';" />
+
+            <input type="button" class="btn btn-light" value="SingUp" onclick="window.location.href='@Url.Action("SingUp","Login")';" />
+        </div>
+        
     </div>
 </form>
-<script src="~/Scripts/Index_Email_Verification.js"></script>

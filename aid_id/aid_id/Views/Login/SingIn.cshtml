@@ -1,59 +1,23 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "SingIn";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    TempData["EmailConfirmed"] = @ViewBag.Email;
 }
 
-<div class="div-align-center-class">
-    <div class="container">
-        <form id="SignInVerify" method="post">
-            @Html.AntiForgeryToken()
-            <div class="row">
-                <div class="col">
-                    <!-- 50% -->
-                    <label class="inTittle">EMAIL</label>
-                </div>
-                <div class="col">
-                    <!-- 50% -->
-                    <label class="inTittle">PASSWORD</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control input-button-login-class" aria-describedby="basic-addon3"
-                           value="&#xf007;  @ViewBag.Email" id="inputEmail" disabled>
-                    <input type="password" class="form-control input-button-login-class" id="password" name="inputPass" placeholder="&#xf084; Introduzca su contraseña">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col text-left">
-                    <!-- 50% -->
-                    <a id="blockPassFor" href=""><i>He olvidado mi contraseña</i></a>
-                </div>
-                <div class="col text-right">
-                    <div class="input-text-error-class">@ViewBag.Error</div>
-                </div>
-                <div class="col  text-right">
-                    <!-- 50% -->
-                    <input type="button" class="btn btn-light input-button-submit-class" name="btnEmail" value="Enviar" id="sendPass" onclick="test()" />
-                    <!--  -->
-                </div>
-            </div>
-        </form>
+<form>
+    <div id="blockSingInup">
+        <label class="inTittle">PASSWORD</label>
+        <div class="input-group mb-3">
+            <input type="password" id="password" name="inPass" class="form-control" data-toggle="password" placeholder="Introduzca su contraseña">
+            <input type="password" class="form-control" placeholder="Introduzca su contraseña">
+        </div>
+        <div>
+            <a id="blockPassFor" href=""><i>He olvidado mi contraseña</i></a>
+            <input id="sendButton" class="btn btn-light" type="button" value="Sing" onclick="window.location.href='@Url.Action("SingUp", "Login" )';" />
+        </div>
     </div>
-</div>
-<script>
-    function test() {
-        if ($("#password").val() == "") {
-            document.getElementById("password").style.borderColor = "red";
-            document.getElementById("password").classList.add("input-text-error-class");
-            document.getElementById("password").placeholder = "Error! Password vacío";
-        } else {
-            document.getElementById("sendPass").removeAttribute('type');
-            document.getElementById("sendPass").setAttribute('type', 'submit');
-            document.getElementById("sendPass").formAction = "@Url.Action("Verify")";
-        }
-    }
-    document.getElementById("sendPass").removeAttribute('type');
-    document.getElementById("sendPass").setAttribute('type', 'button');
+</form>
+
+<script type="text/javascript">
+    $("#password").password('toggle');
 </script>

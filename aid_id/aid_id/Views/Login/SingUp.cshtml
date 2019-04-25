@@ -3,104 +3,76 @@
     ViewBag.Title = "SingUp";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!--   FORMULARIO DE REGISTRO   -->
-<form id="RegisterForm" action="/Login/SingIn/" method="post">
-    <div id="blockAnalysis">
-        <!--   NOMBRE   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelName">Nombre</span>
-            </div>
-            <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Indique su nombre">
-        </div>
-        <!--   APELLIDO   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelSurname">Apellidos</span>
-            </div>
-            <input type="text" class="form-control" id="inputSurname" name="inputSurname" placeholder="Indique sus apellidos">
-        </div>
-        <!--   EDAD   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelAge">Edad</span>
-            </div>
-            <input type="number" class="form-control" id="inputAge" name="inputAge" placeholder="Indique su edad" min="1" max="120">
-        </div>
-        <!--   PESO   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelWeight">Peso</span>
-            </div>
-            <input type="number" class="form-control" id="inputWeight" name="inputWeight" placeholder="Indique su peso en kg">
-        </div>
-        <!--   ALTURA   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelHeight">Altura</span>
-            </div>
-            <input type="number" class="form-control" id="inputHeight" name="inputHeight" placeholder="Indique su altura en cm">
-        </div>
-        <!--   EMAIL   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelEmail">Email</span>
-            </div>
-            <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email">
-        </div>
-        <!--   PASSWORD1   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelPass1">Contraseña</span>
-            </div>
-            <input type="password" class="form-control" id="inputPass1" name="inputPass1" placeholder="Indique su contraseña">
-        </div>
-        <!--   PASSWORD2   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelPass2">Confirmación</span>
-            </div>
-            <input type="password" class="form-control" id="inputPass2" name="inputPass2" placeholder="Repita su contraseña">
-        </div>
 
-        <!--   GLUCEMIA   -->
-        <div>
+<form>
+    <div id="blockAnalysis">
+            <!--   FORMULARIO DE REGISTRO   -->
+            <!--   NOMBRE   -->
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="labelGlu">Glucemia</span>
+                    <span class="input-group-text" id="basic-addon1">Nombre</span>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="number" class="form-control" id="inputGluMin" name="inputGluMin" placeholder="Min" min="0" max="200">
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" id="inputGluMax" name="inputGluMax" placeholder="Max" min="0" max="200">
-                    </div>
-                </div>
+                <input type="text" class="form-control" placeholder="Indique su nombre">
             </div>
-            <!--   INSULINA   -->
+            <!--   APELLDO   -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Apellidos</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Indique sus apellidos">
+            </div>
+            <!--   PASSWORD   -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Contraseña</span>
+                </div>
+                <input type="password" class="form-control" placeholder="Indique su contraseña">
+            </div>
+            <!--   CONFIRM PASS   -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Confirmación</span>
+                </div>
+                <input type="password" class="form-control" placeholder="Confirme su contraseña">
+            </div>
+            <!--   EDAD   -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Edad</span>
+                </div>
+                <input type="number" class="form-control" placeholder="Indique su edad">
+            </div>
+            <!--   PESO   -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Peso</span>
+                </div>
+                <input type="number" class="form-control" placeholder="Indique su peso en Kg  75Kg">
+            </div>
+            <!--   ALTURA   -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Altura</span>
+                </div>
+                <input type="number" class="form-control" placeholder="Indique su altura en cm   180cm">
+            </div>
+            <!--   GLUCEMIA   -->
             <div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="labelIns">Insulina</span>
+                        <span class="input-group-text" id="basic-addon1">Glucemia</span>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="number" class="form-control" id="inputInsMin" name="inputInsMin" placeholder="Min" min="0" max="200">
+                            <input type="number" class="form-control" placeholder="min">
                         </div>
                         <div class="col">
-                            <input type="number" class="form-control" id="inputInsMax" name="inputInsMax" placeholder="Max" min="0" max="200">
+                            <input type="number" class="form-control" placeholder="max">
                         </div>
                     </div>
-                </div>
-                <!--   INSULINA / CARBOHIDRATOS   -->
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Total insulina</span>
-                    </div>
-                    <input type="number" class="form-control" placeholder="Indique su insulina total" step="5" min="0" max="200">
-                </div>
-                <!--   INSULINA / GLUCOSA   -->
-                <input type="submit" class="btn btn-light input-button-submit-class float-right" name="btnEmail" value="Enviar" id="inputEmail" />
             </div>
+            <!--   INSULINA / CARBOHIDRATOS   -->
+            <!--   INSULINA / GLUCOSA   -->
+    </div>
 </form>
+

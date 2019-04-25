@@ -24,7 +24,5 @@ namespace aid_id.Models
         public System.Data.Entity.DbSet<aid_id.Models.Usuarios> Usuarios { get; set; }
 
         public System.Data.Entity.DbSet<aid_id.Models.Alimentos> Alimentos { get; set; }
-
-        public System.Data.Entity.DbSet<aid_id.Models.Comidas> Comidas { get; set; }
     }
 }

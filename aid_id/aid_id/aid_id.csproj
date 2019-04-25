@@ -120,7 +120,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\Index_Email_Verification.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -153,11 +152,14 @@
     <Compile Include="Migrations\201904181151525_checkup.Designer.cs">
       <DependentUpon>201904181151525_checkup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904251201408_analisis_y_comidas_fuuuuuuuuuuuuusion.cs" />
+    <Compile Include="Migrations\201904251201408_analisis_y_comidas_fuuuuuuuuuuuuusion.Designer.cs">
+      <DependentUpon>201904251201408_analisis_y_comidas_fuuuuuuuuuuuuusion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\aid_idContext.cs" />
     <Compile Include="Models\Alimentos.cs" />
     <Compile Include="Models\Analisis.cs" />
-    <Compile Include="Models\Comidas.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -178,8 +180,6 @@
     <Content Include="Views\Alimentos\Details.cshtml" />
     <Content Include="Views\Alimentos\Edit.cshtml" />
     <Content Include="Views\Alimentos\Index.cshtml" />
-    <Content Include="Views\Login\Check.cshtml" />
-    <Content Include="Views\Login\Logged.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904181151525_checkup.resx">
       <DependentUpon>201904181151525_checkup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251201408_analisis_y_comidas_fuuuuuuuuuuuuusion.resx">
+      <DependentUpon>201904251201408_analisis_y_comidas_fuuuuuuuuuuuuusion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

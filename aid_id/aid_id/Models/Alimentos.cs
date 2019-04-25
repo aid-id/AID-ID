@@ -9,7 +9,7 @@ namespace aid_id.Models
         // Necesario para crear una relacion N:M. En la otra tabla hay que hacer lo mismo. EF generará la tabla intermedia automaticamente.
         public Alimentos()
         {
-            this.Comidas = new HashSet<Comidas>();
+            this.Analisis = new HashSet<Analisis>();
         }
 
         // Primary key. Entity Framework siempre buscara por una palabra que contenga ID
@@ -27,6 +27,6 @@ namespace aid_id.Models
 
 
         // "Collection navigation property" de tipo comida
-        public virtual ICollection<Comidas> Comidas { get; set; }
+        public virtual ICollection<Analisis> Analisis { get; set; }
     }
 }

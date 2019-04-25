@@ -7,6 +7,11 @@ namespace aid_id.Models
 {
     public partial class Analisis
     {
+        // Necesario para crear una relacion N:M. En la otra tabla hay que hacer lo mismo. EF generará la tabla intermedia automaticamente.
+        public Analisis()
+        {
+            this.Alimentos = new HashSet<Alimentos>();
+        }
         // Primary key. Entity Framework siempre buscara por una palabra que contenga ID
         [Key]
         public long Id_analisis { get; set; }
@@ -19,10 +24,14 @@ namespace aid_id.Models
 
         public byte Intensidad_deporte { get; set; }
 
+        public string Tipocomida { get; set; }
+
+        public Nullable<decimal> Carbo_totales { get; set; }
+
         public long Id_usuario { get; set; }
 
-        // "Collection navigation property" de tipo comidas
-        public virtual ICollection<Comidas> Comidas { get; set; }
+        // "Collection navigation property" de tipo alimentos
+        public virtual ICollection<Alimentos> Alimentos { get; set; }
 
         // "Navigation property". Foreign key de la tabla usuarios
         public virtual Usuarios Usuarios { get; set; }

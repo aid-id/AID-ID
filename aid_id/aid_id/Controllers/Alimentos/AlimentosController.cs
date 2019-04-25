@@ -16,13 +16,21 @@ namespace aid_id.Controllers.Alimentos
         private Aid_idContext db = new Aid_idContext();
 
         // GET: Alimentos
-        public ActionResult Index(string Find)
+        public ActionResult Index(string Find, int pag=1)
         {
+            var query = db.Alimentos.SqlQuery("Select * From Alimentos").ToList();
+
+            // CALCULATE TOTAL OF PAGES WE NEED    select top 10 
+            int lenghtList = db.Alimentos.Count();
+            double lenghtPag = lenghtList / 10;
+            double paginCount = Math.Ceiling(lenghtPag);
+            
+      
             if (Find == null || Find.Equals(""))
             {
-                return View(db.Alimentos.ToList());
+                return View(query);
             }
-            var query = db.Alimentos.SqlQuery("Select * From Alimentos Where nombre Like '%" + Find + "%'").ToList();
+            query = db.Alimentos.SqlQuery("Select Top 10 * From Alimentos Where nombre Like '%" + Find + "%'").ToList();
             return View(query);
         }
 

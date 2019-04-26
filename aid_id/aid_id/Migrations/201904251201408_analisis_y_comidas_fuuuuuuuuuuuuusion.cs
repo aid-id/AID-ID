@@ -7,12 +7,12 @@ namespace aid_id.Migrations
     {
         public override void Up()
         {
-            DropForeignKey("dbo.ComidasAlimentos", "Comidas_Id_comida", "dbo.Comidas");
-            DropForeignKey("dbo.ComidasAlimentos", "Alimentos_Id_alimento", "dbo.Alimentos");
+            //DropForeignKey("dbo.ComidasAlimentos", "Comidas_Id_comida", "dbo.Comidas");
+            //DropForeignKey("dbo.ComidasAlimentos", "Alimentos_Id_alimento", "dbo.Alimentos");
             DropForeignKey("dbo.Comidas", "Id_analisis", "dbo.Analisis");
             DropIndex("dbo.Comidas", new[] { "Id_analisis" });
-            DropIndex("dbo.ComidasAlimentos", new[] { "Comidas_Id_comida" });
-            DropIndex("dbo.ComidasAlimentos", new[] { "Alimentos_Id_alimento" });
+            //DropIndex("dbo.ComidasAlimentos", new[] { "Comidas_Id_comida" });
+            //DropIndex("dbo.ComidasAlimentos", new[] { "Alimentos_Id_alimento" });
             CreateTable(
                 "dbo.AnalisisAlimentos",
                 c => new
@@ -29,7 +29,7 @@ namespace aid_id.Migrations
             AddColumn("dbo.Analisis", "Tipocomida", c => c.String());
             AddColumn("dbo.Analisis", "Carbo_totales", c => c.Decimal(precision: 18, scale: 2));
             DropTable("dbo.Comidas");
-            DropTable("dbo.ComidasAlimentos");
+            //DropTable("dbo.ComidasAlimentos");
         }
         
         public override void Down()

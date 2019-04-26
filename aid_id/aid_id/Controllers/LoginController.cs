@@ -110,6 +110,7 @@ namespace aid_id.Controllers
                     }
                     catch (InvalidOperationException)
                     {
+                        ViewBag.EmailRegister = Request.Form["inputEmail"];
                         return View("SingUp");
                     }
                 }

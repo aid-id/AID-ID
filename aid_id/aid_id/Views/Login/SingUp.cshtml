@@ -4,19 +4,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!--   FORMULARIO DE REGISTRO   -->
-<form id="RegisterForm" action="/Login/SingIn/" method="post">
+<form id="RegisterForm" action="/Login/Index" method="post">
+    @Html.AntiForgeryToken()
     <div id="blockAnalysis">
         <!--   NOMBRE   -->
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="labelName">Nombre</span>
             </div>
-            <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Indique su nombre">
+            <input type="text" class="form-control" id="inputName" name="namee" placeholder="Indique su nombre">
         </div>
         <!--   APELLIDO   -->
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="labelSurname">Apellidos</span>
+                <span class="input-group-text" id="labelSurname">Apellido</span>
             </div>
             <input type="text" class="form-control" id="inputSurname" name="inputSurname" placeholder="Indique sus apellidos">
         </div>
@@ -25,7 +26,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="labelAge">Edad</span>
             </div>
-            <input type="number" class="form-control" id="inputAge" name="inputAge" placeholder="Indique su edad" min="1" max="120">
+            <input type="number" class="form-control" id="inputAge" name="inputAge" placeholder="Indique su edad">
         </div>
         <!--   PESO   -->
         <div class="input-group mb-3">
@@ -39,21 +40,21 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="labelHeight">Altura</span>
             </div>
-            <input type="number" class="form-control" id="inputHeight" name="inputHeight" placeholder="Indique su altura en cm">
+            <input type="number" class="form-control" id="inputHeight" name="inputHeight" placeholder="Altura en cm sin decimals ejem: 179">
         </div>
         <!--   EMAIL   -->
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="labelEmail">Email</span>
             </div>
-            <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email">
+            <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" value="@ViewBag.EmailRegister" disabled="disabled">
         </div>
         <!--   PASSWORD1   -->
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="labelPass1">Contraseña</span>
             </div>
-            <input type="password" class="form-control" id="inputPass1" name="inputPass1" placeholder="Indique su contraseña">
+            <input type="password" class="form-control" id="inputPass1" name="inputPass1" placeholder="Indique su contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
         </div>
         <!--   PASSWORD2   -->
         <div class="input-group mb-3">
@@ -67,29 +68,47 @@
         <div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="labelGlu">Glucemia</span>
+                    <span class="input-group-text" id="labelGluMin">Glucemia Min (mg/dl)</span>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input type="number" class="form-control" id="inputGluMin" name="inputGluMin" placeholder="Min" min="0" max="200">
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" id="inputGluMax" name="inputGluMax" placeholder="Max" min="0" max="200">
+                        <input type="number" class="form-control" id="inputGluMin" name="inputGluMin" placeholder="Min (mg/dl)" value="80">
                     </div>
                 </div>
             </div>
-            <!--   INSULINA   -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="labelGluMax">Glucemia Max (mg/dl)</span>
+                </div>
+                <div>
+                    <div class="col">
+                        <input type="number" class="form-control" id="inputGluMax" name="inputGluMax" placeholder="Max (mg/dl)" value="120">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--   Ratio Ins/Glu (mg/dl)/U   -->
+        <div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="labelIns">Ratio Ins/Glu (mg/dl)/U</span>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="number" class="form-control" id="inputInsGlu" name="inputInsGlu" placeholder="Ejem 20 (mg/dl)/U" value="20">
+                    </div>
+                </div>
+            </div>
+            <!--   Ratio Ins/Ch (g/U)     -->
             <div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="labelIns">Insulina</span>
+                        <span class="input-group-text" id="labelIns">Ratio Ins/CH (mg/dl)/U</span>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="number" class="form-control" id="inputInsMin" name="inputInsMin" placeholder="Min" min="0" max="200">
-                        </div>
-                        <div class="col">
-                            <input type="number" class="form-control" id="inputInsMax" name="inputInsMax" placeholder="Max" min="0" max="200">
+                            <input type="number" class="form-control" id="inputInsCh" name="inputInsCh" placeholder="Ejem 20 (g/U)" value="5">
                         </div>
                     </div>
                 </div>
@@ -98,9 +117,11 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Total insulina</span>
                     </div>
-                    <input type="number" class="form-control" placeholder="Indique su insulina total" step="5" min="0" max="200">
+                    <input type="number" class="form-control" placeholder="Indique su insulina total" id="inputInsTot" name="inputInsTot">
                 </div>
                 <!--   INSULINA / GLUCOSA   -->
-                <input type="submit" class="btn btn-light input-button-submit-class float-right" name="btnEmail" value="Enviar" id="inputEmail" />
+                <input type="button" class="btn btn-light input-button-submit-class float-right" name="btnEmail" value="Enviar" id="inputEmail" onclick="helperGroup()" />
             </div>
+        </div>
 </form>
+<script src="~/Scripts/Login_SignUp_Veification.js"></script>

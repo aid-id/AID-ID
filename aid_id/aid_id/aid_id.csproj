@@ -120,6 +120,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Index_Email_Verification.js" />
+    <Content Include="Scripts\Login_SignUp_Veification.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -191,6 +193,8 @@
     <Content Include="Views\Alimentos\Index.cshtml" />
     <Content Include="Views\NuevoAnalisis\Index.cshtml" />
     <Content Include="Views\NuevoAnalisis\ResultInsulina.cshtml" />
+    <Content Include="Views\Login\Check.cshtml" />
+    <Content Include="Views\Login\Logged.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -15,13 +15,30 @@ namespace aid_id.Controllers.Alimentos
     {
         private Aid_idContext db = new Aid_idContext();
 
+        private string Filter = null;
+
         // GET: Alimentos
-        public ActionResult Index(string Find, int pag = 1)
+        /// <summary>
+        /// Recoge de la BD la lista de alimentos.
+        /// </summary>
+        /// <param name="filter">Filtra por orden alfabético los alimentos que muestra
+        /// según contengan el texto indicado.</param>
+        /// <param name="pag">Le indicas en qué página estás de la tabla.</param>
+        /// <returns>Una tabla de alimentos con 10 resultados paginados.</returns>
+        public ActionResult Index(string filter, int pag = 1)
         {
-            // CALCULATE TOTAL OF PAGES WE NEED    select top 10 
-            //int lenghtAlim = db.Alimentos.Count();
-            //double lenghtPag = lenghtAlim / 10;
-            //double paginCount = Math.Ceiling(lenghtPag);
+            if (filter == null)
+            {
+                filter = Filter;
+            }
+            else
+            {
+                Filter = filter;
+            }
+            // Calcular el total de botones de paginación 
+            int pageCount = db.Alimentos.Count();
+            double totalPages = pageCount / 10;
+            double pageUpRound = Math.Ceiling(totalPages);
 
             string query = "SELECT * FROM Alimentos";
             var allAlimentos = db.Alimentos.SqlQuery(query).ToList();
@@ -35,12 +52,12 @@ namespace aid_id.Controllers.Alimentos
                 tempAlimentos.Add(allAlimentos[i]);
             }
 
-            if (Find == null || Find.Equals(""))
+            if (filter == null || filter.Equals(""))
             {
                 return View(tempAlimentos);
             }
 
-            query = "SELECT * FROM Alimentos WHERE nombre LIKE '%" + Find + "%'";
+            query = "SELECT * FROM Alimentos WHERE nombre LIKE '%" + filter + "%'";
             return View(allAlimentos);
         }
 

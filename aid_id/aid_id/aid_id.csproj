@@ -190,6 +190,7 @@
     <Content Include="Views\Alimentos\Edit.cshtml" />
     <Content Include="Views\Alimentos\Index.cshtml" />
     <Content Include="Views\NuevoAnalisis\Index.cshtml" />
+    <Content Include="Views\NuevoAnalisis\ResultInsulina.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

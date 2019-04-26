@@ -23,7 +23,7 @@ namespace aid_id.Controllers
         //POST Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_analisis,Valor,TipoComida,Carbo_totales,Id_usuario")] Models.Analisis analisis)
+        public ActionResult Index([Bind(Include = "Id_analisis,Valor,TipoComida,Carbo_totales,Id_usuario")] Models.Analisis analisis)
         {
             if (ModelState.IsValid)
             {

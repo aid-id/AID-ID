@@ -4,11 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using aid_id.Data;
+using aid_id.Models;
 
 namespace aid_id.Controllers
 {
     public class NuevoAnalisisController : Controller
     {
+        private Aid_idContext db = new Aid_idContext();
+
         // GET: NuevoAnalisis
         public ActionResult Index()
         {
@@ -24,12 +27,17 @@ namespace aid_id.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Alimentos.Add(analisis);
+                db.Analisis.Add(analisis);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ResultInsulina");
             }
 
             return View(analisis);
+        }
+
+        public ActionResult ResultInsulina()
+        {
+            return View();
         }
     }
 }

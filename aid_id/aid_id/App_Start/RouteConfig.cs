@@ -18,6 +18,12 @@ namespace aid_id
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
             );
+            //Ruta cusotom para la pagina de introducir un analisis
+            routes.MapRoute(
+                name: "NuevoAnalisis",
+                url: "{controller}/{action}/{mail}",
+                defaults: new { controller = "NuevoAnalisis", action = "Index" }
+            );
         }
     }
 }

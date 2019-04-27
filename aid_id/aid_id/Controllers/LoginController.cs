@@ -68,7 +68,7 @@ namespace aid_id.Controllers
                         ControllerContext.HttpContext.Response.SetCookie(cookieLogin);
                         HttpCookie cookieEmail = new HttpCookie("cookieEmail", email);
                         cookieLogin.Expires = DateTime.Now.AddYears(1); //the cookie is deleted after one year
-                        ControllerContext.HttpContext.Response.SetCookie(cookieLogin);
+                        ControllerContext.HttpContext.Response.SetCookie(cookieEmail);
                         return View("Logged");
                     }
                     catch (InvalidOperationException) //If login fail...

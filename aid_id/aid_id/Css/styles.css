@@ -4,6 +4,9 @@
         /*_________________________________________________________________________*/
         /*       LAYOUT COMMON STYLE                                            */
 
+.textbox-idUsuario-hide {
+    visibility: hidden;
+}
 
         @media (min-width: 1200px) {
         }

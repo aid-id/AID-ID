@@ -166,6 +166,10 @@
     <Compile Include="Migrations\201904261030216_something_has_changed.Designer.cs">
       <DependentUpon>201904261030216_something_has_changed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904270756371_idUsuario_nuevoanalisis.cs" />
+    <Compile Include="Migrations\201904270756371_idUsuario_nuevoanalisis.Designer.cs">
+      <DependentUpon>201904270756371_idUsuario_nuevoanalisis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\aid_idContext.cs" />
     <Compile Include="Models\Alimentos.cs" />
@@ -220,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904261030216_something_has_changed.resx">
       <DependentUpon>201904261030216_something_has_changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904270756371_idUsuario_nuevoanalisis.resx">
+      <DependentUpon>201904270756371_idUsuario_nuevoanalisis.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

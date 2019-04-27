@@ -15,9 +15,22 @@ namespace aid_id.Controllers
         // GET: NuevoAnalisis
         public ActionResult Index()
         {
-            var repo = new AnalisisRepository();
-            var alimentosList = repo.CrearAnalisis();
-            return View(alimentosList);
+            string value = "";
+            var cookieLogin = ControllerContext.HttpContext.Request.Cookies["cookieLogin"];
+            if (cookieLogin != null)
+            {
+                value = cookieLogin.Value;
+            }
+            if (value == "1")
+            {
+                ViewBag.Id_Usuario = cookieLogin;
+                var repo = new AnalisisRepository();
+                var alimentosList = repo.CrearAnalisis();
+                return View(alimentosList);
+            }
+            //else
+            //return View("Login", "Index");
+            return RedirectToAction("Index", "Login");
         }
 
         //POST Create

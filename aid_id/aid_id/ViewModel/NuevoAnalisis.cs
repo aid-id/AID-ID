@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,5 +23,7 @@ namespace aid_id.Models
         public SelectList IntensidadDeporte { get; set; }
 
         public DateTime FechaHora { get; set; }
+
+        public int Id_Usuario { get; set; }
     }
 }

@@ -137,7 +137,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Alimentos\AlimentosController.cs" />
-    <Compile Include="Controllers\InsulineResultController.cs" />
+    <Compile Include="Controllers\InsulineResultsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NuevoAnalisisController.cs" />
     <Compile Include="Controllers\Sha1.cs" />
@@ -199,6 +199,7 @@
     <Content Include="Views\NuevoAnalisis\ResultInsulina.cshtml" />
     <Content Include="Views\Login\Check.cshtml" />
     <Content Include="Views\Login\Logged.cshtml" />
+    <Content Include="Views\InsulineResults\InsulineResults.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

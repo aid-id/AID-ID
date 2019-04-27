@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace aid_id.Controllers
 {
-    public class InsulineResultController : Controller
+    public class InsulineResultsController : Controller
     {
-        // GET: InsulineResult
-        public ActionResult InsulineResult()
+        // GET: InsulineResults
+        public ActionResult InsulineResults()
         {
             return View();
         }

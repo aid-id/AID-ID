@@ -25,7 +25,7 @@ namespace aid_id.Controllers.Alimentos
         /// según contengan el texto indicado.</param>
         /// <param name="pag">Le indicas en qué página estás de la tabla.</param>
         /// <returns>Una tabla de alimentos con 10 resultados paginados.</returns>
-        public ActionResult Index(string filter, int pag = 1)
+        public ActionResult Index(string filter, int pag)
         {
             if (filter == null)
             {
@@ -34,6 +34,11 @@ namespace aid_id.Controllers.Alimentos
             else
             {
                 Filter = filter;
+            }
+
+            if (pag < 1)
+            {
+                pag = 1;
             }
             // Calcular el total de botones de paginación 
             int pageCount = db.Alimentos.Count();
@@ -57,7 +62,7 @@ namespace aid_id.Controllers.Alimentos
                 return View(tempAlimentos);
             }
 
-            query = "SELECT * FROM Alimentos WHERE nombre LIKE '%" + filter + "%'";
+            query += " WHERE nombre LIKE '%" + filter + "%'";
             return View(allAlimentos);
         }
 

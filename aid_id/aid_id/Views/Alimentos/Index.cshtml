@@ -14,8 +14,7 @@
             <form asp-controller="Alimentos" asp-action="Search" method="get">
                 <input type="text" name="filter">
                 <button class="btn btn-light" onclick="window.location.href='@Url.Action("Index","Alimentos")';">Filtrar</button>
-
-            </form>
+            </form><br>
         </div>
     </div>
 
@@ -67,17 +66,19 @@
         <!--   PAGINATOR FOR CHANGE THE TOTAL 10 VIEW   (jqEx06)-->
         <div class="row">
             <div class="col">
+                xxxxxxxxxxxxxxxxxxxxxx
                 <ul id="exPagination" class="pagination-sm">
                     <li class="btPagination prev">
-                        <a href="" class="exLink" id="prev">Prev</a>
+                        <button class="exLink" id="prev">Prev</button>
                     </li>
                     <li class="btPagination">
-                        <a href="" class="exLi"nk>1</a>
+                        <button id="pageid" class="exLink"></button>
                     </li>
                     <li class="btPagination next">
-                        <a href="OtherPage()" class="exLink" id="next">Next</a>
+                        <button class="exLink" id="next">Next</button>
                     </li>
                 </ul>
+                <button onclick="OtherPage()">Other</button>
             </div>
         </div>
     </div>
@@ -86,26 +87,40 @@
 <script>
     var pagin;
     var direction;
-    function OtherPage() {
-        //window.location.href(direction);
+
+    @*if (localStorage.getItem("currpage")===null) {
+        direction = '@Url.Action("Index", "Alimentos")' + "?filter=&pag=" + page;
+        window.location.href = direction;
+        console.log("Soy" + page);
+        //localStorage.setItem("currpage", page + "");
+    }*@
+
+    $("#pageid").text(localStorage.getItem("currentpage"));
+
+    function OtherPage(){
         console.log("Recargando");
-        return direction;
-    }
+        //window.location.href=direction;
+        //return direction;
+    };
+
     $('#exPagination').twbsPagination({
         totalPages: 20,
         visiblePages: 1,
         next: 'Next',
         prev: 'Prev',
         onPageClick: function ChangePage(event, page) {
-            //fetch content and render here
-
-            //location.href = d;
+            //localStorage.setItem("currpage", page +"");
             console.log("Estás en la página " + page);
             $('#page-content').text('Page ' + page) + ' content here';
-            direction = '@Url.Action("Index", "Alimentos")' + "?filter=\"\"pag=" + page;
-            console.log(direction);
-            //('#prev').addEventListener("click", OtherPage, false);
-            //('#next').addEventListener("click", OtherPage, false);
+            direction = '@Url.Action("Index", "Alimentos")' + "?filter=&pag=" + page;
+            
+            //pagin = page;
+
+            if (page != localStorage.getItem("currpage")) {
+                localStorage.setItem("currpage", page +"");
+                console.log(localStorage.getItem("currpage"));
+                window.location.href = direction;
+            }
         },
     });
 </script>

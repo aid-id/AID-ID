@@ -75,7 +75,7 @@
                         <a href="" class="exLi"nk>1</a>
                     </li>
                     <li class="btPagination next">
-                        <a href="" class="exLink" id="next">Next</a>
+                        <a href="OtherPage()" class="exLink" id="next">Next</a>
                     </li>
                 </ul>
             </div>
@@ -85,6 +85,12 @@
 
 <script>
     var pagin;
+    var direction;
+    function OtherPage() {
+        //window.location.href(direction);
+        console.log("Recargando");
+        return direction;
+    }
     $('#exPagination').twbsPagination({
         totalPages: 20,
         visiblePages: 1,
@@ -96,14 +102,10 @@
             //location.href = d;
             console.log("Estás en la página " + page);
             $('#page-content').text('Page ' + page) + ' content here';
-            pagin = "?filter=\"\"pag=" + page;
-            ('#prev').addEventListener("click", OtherPage, false);
-            ('#next').addEventListener("click", OtherPage, false);
+            direction = '@Url.Action("Index", "Alimentos")' + "?filter=\"\"pag=" + page;
+            console.log(direction);
+            //('#prev').addEventListener("click", OtherPage, false);
+            //('#next').addEventListener("click", OtherPage, false);
         },
-        function OtherPage(){
-
-            var direction = '@Url.Action("Index", "Alimentos")';
-            direction += pagin;
-        }
     });
 </script>

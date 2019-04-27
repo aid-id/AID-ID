@@ -47,7 +47,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Id_Usuario, (string)ViewBag.Id_Usuario)
+            @Html.TextBoxFor(model => model.Id_Usuario, new { @Value = ViewBag.Id_Usuario, @class = "textbox-idUsuario-hide" })
         </div>
 
         <div class="form-group">

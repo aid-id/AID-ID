@@ -17,13 +17,14 @@ namespace aid_id.Controllers
         {
             string value = "";
             var cookieLogin = ControllerContext.HttpContext.Request.Cookies["cookieLogin"];
+            var cookieId = ControllerContext.HttpContext.Request.Cookies["cookieEmail"];
             if (cookieLogin != null)
             {
                 value = cookieLogin.Value;
             }
             if (value == "1")
             {
-                ViewBag.Id_Usuario = cookieLogin;
+                ViewBag.Id_Usuario = "20";
                 var repo = new AnalisisRepository();
                 var alimentosList = repo.CrearAnalisis();
                 return View(alimentosList);
@@ -36,7 +37,7 @@ namespace aid_id.Controllers
         //POST Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "Id_analisis,Valor,TipoComida,Carbo_totales,Id_usuario")] Models.Analisis analisis)
+        public ActionResult Index([Bind(Include = "Id_analisis,Valor,Fechahora,Id_Usuario")] Analisis analisis)
         {
             if (ModelState.IsValid)
             {

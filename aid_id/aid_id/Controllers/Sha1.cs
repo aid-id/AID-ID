@@ -9,15 +9,21 @@ namespace aid_id.Controllers
     {
         public string GetSHA1(String texto)
         {
-            SHA1 sha1 = SHA1CryptoServiceProvider.Create();
-            Byte[] textOriginal = ASCIIEncoding.Default.GetBytes(texto);
-            Byte[] hash = sha1.ComputeHash(textOriginal);
             StringBuilder cadena = new StringBuilder();
-            foreach (byte i in hash)
+            try
             {
-                cadena.AppendFormat("{0:x2}", i);
+                SHA1 sha1 = SHA1CryptoServiceProvider.Create();
+                Byte[] textOriginal = ASCIIEncoding.Default.GetBytes(texto);
+                Byte[] hash = sha1.ComputeHash(textOriginal);
+                
+                foreach (byte i in hash)
+                {
+                    cadena.AppendFormat("{0:x2}", i);
+                }
             }
+            catch (Exception) { }
             return cadena.ToString();
+
         }
     }
 }

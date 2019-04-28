@@ -28,6 +28,19 @@ namespace aid_id.Controllers
             //else
             return View("Index");
         }
+
+        //POST FORM FROM -> SignInForm
+        //http://localhost:51356/Login/Register
+        /*
+        [HttpPost]
+        [Route("/Login/SingIn/Register")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register()
+        {
+            ViewBag.Nombre = Request.Form["inputNameRegister"];
+            
+        }*/
+
         //POST FORM FROM -> SignInForm
         //http://localhost:51356/Login/Verify
         [HttpPost]
@@ -83,6 +96,64 @@ namespace aid_id.Controllers
             {
                 ViewBag.Error = "Error, No se puede conectar con la BBDD";
                 return View("Index");
+            }
+        }
+
+        public ActionResult Register()
+        {
+            using (Aid_idContext db = new Aid_idContext())
+            {
+                Usuarios user = new Usuarios();
+                //Nombre
+                user.Nombre = Request.Form["inputNameRegister"];
+                //Apellido
+                user.Apellido = Request.Form["inputSurnameRegister"];
+                //Edad
+                byte inputAgeRegisterByte = 0;
+                Byte.TryParse(Request.Form["inputAgeRegister"], out inputAgeRegisterByte);
+                user.Edad = inputAgeRegisterByte;
+                //Peso
+                byte inputWeightRegisterByte = 0;
+                Byte.TryParse(Request.Form["inputWeightRegister"], out inputWeightRegisterByte);
+                user.Peso = inputWeightRegisterByte;
+                //Altura
+                byte inputHeightRegisterByte = 0;
+                Byte.TryParse(Request.Form["inputHeightRegister"], out inputHeightRegisterByte);
+                user.Altura = inputHeightRegisterByte;
+                //Email
+                user.Correo = Request.Form["inputEmailRegister"];
+                //PASSWORD inputPass1Register
+                Sha1 encript = new Sha1();
+                var passEncripted = encript.GetSHA1(Request.Form["inputPass1Register"]);
+                user.Passcode = passEncripted;
+                //Glucemia Min
+                byte inputGluMinRegisterByte = 0;
+                Byte.TryParse(Request.Form["inputGluMinRegister"], out inputGluMinRegisterByte);
+                user.Glucemia_min = inputGluMinRegisterByte;
+                //Glucemia Max
+                byte inputGluMaxRegisterByte = 0;
+                Byte.TryParse(Request.Form["inputGluMaxRegister"], out inputGluMaxRegisterByte);
+                user.Glucemia_max = inputGluMaxRegisterByte;
+                //Ratio Ins/Glu (mg/dl)/U
+                byte inputInsGluRegisterByte = 0;
+                Byte.TryParse(Request.Form["inputInsGluRegister"], out inputInsGluRegisterByte);
+                user.R_insulina_gluc = inputInsGluRegisterByte;
+                //Ratio Ins/Ch (g/U)
+                byte inputInsChRegisterByte = 0;
+                Byte.TryParse(Request.Form["inputInsGluRegister"], out inputInsChRegisterByte);
+                user.R_insulina_carb = inputInsChRegisterByte;
+                //inputInsTotRegister
+                byte inputInsTotRegisterByte = 0;
+                Byte.TryParse(Request.Form["inputInsTotRegister"], out inputInsTotRegisterByte);
+                user.Total_insulina_diaria = inputInsTotRegisterByte;
+                //INSERT IN DATABASE
+                if (user != null)
+                {
+                    db.Usuarios.Add(user);
+                    db.SaveChanges(); 
+                }
+                ViewBag.Nombre = user.Nombre;
+                return View("Register");
             }
         }
 

@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Registro realizado. Bienvenido @ViewBag.Nombre, ya puedes iniciar sesión.</h2>
+
+<input type="button" value="Iniciar sesión" onclick="@("window.location.href='" + @Url.Action("Index", "Login") + "'");" />

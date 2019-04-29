@@ -3,6 +3,7 @@
     ViewBag.Title = "SingUp";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <!--   FORMULARIO DE REGISTRO   -->
 <form id="RegisterForm" action="/Login/Register" method="post">
     @Html.AntiForgeryToken()
@@ -47,7 +48,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="labelEmail">Email</span>
             </div>
-            <input type="text" class="form-control" id="inputEmail" name="inputEmailRegister" placeholder="Email" value="@ViewBag.EmailRegister" disabled>
+            <input type="text" class="form-control" id="inputEmailSingUp" name="inputEmailRegister" placeholder="Email" value="@ViewBag.EmailRegister">
         </div>
         <!--   PASSWORD1   -->
         <div class="input-group mb-3">

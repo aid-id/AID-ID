@@ -165,3 +165,10 @@
             min-height: 60vh;
             align-items: center;
         }
+
+        /*Input email from View emailSignIn & SignUp*/
+        #emailSignIn, #inputEmailSingUp {
+            background-color: #F0F0F0;
+            color: #303030;
+            pointer-events: none;
+        }

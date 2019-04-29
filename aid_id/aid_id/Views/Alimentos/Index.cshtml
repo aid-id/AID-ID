@@ -4,7 +4,33 @@
     ViewBag.Title = "Alimentos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="my_jquery_functions.js"></script>    
+    <style>
+        .pagination {
+            display: inline-block;
+        }
 
+            .pagination a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+            }
+
+                .pagination a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                    border-radius: 5px;
+                }
+
+                .pagination a:hover:not(.active) {
+                    background-color: #ddd;
+                    border-radius: 5px;
+                }
+    </style>
+</head>
 <body>
     <h2>Alimentos</h2>
 
@@ -64,7 +90,7 @@
 
 
         <!--   PAGINATOR FOR CHANGE THE TOTAL 10 VIEW   (jqEx06)-->
-        <div class="row">
+        @*<div class="row">
             <div class="col">
                 xxxxxxxxxxxxxxxxxxxxxx
                 <ul id="exPagination" class="pagination-sm">
@@ -80,11 +106,60 @@
                 </ul>
                 <button onclick="OtherPage()">Other</button>
             </div>
+        </div>*@
+        <div class="pagination">
+            <a id="previous"><</a>
+            <a id="current">1</a>
+            <a id="next">></a>
         </div>
     </div>
 </body>
 
 <script>
+    var direction = '@Url.Action("Index", "Alimentos")' + "?filter=&pag=";
+
+    localStorage.setItem('currpage', $("#current").attr("text"));
+    var fullURL = String(window.location.href);
+    var indexURL = String(fullURL.substr(fullURL.length - 1));
+    var page = parseInt(indexURL);
+
+    $("#current").text(indexURL);
+    console.log(fullURL);
+    console.log("Estamos en la página " + indexURL);
+
+    if (page > 1) {
+        $(document).on("click", "#previous", function () {
+            page--;
+            $('#previous').attr({
+                "href": direction + page
+            });
+        });
+    }
+    else
+    {
+        $(document).on("click", "#previous", function () {
+            $('#previous').attr({
+                "href": direction + page
+            });
+        });
+    }
+
+    $(document).on("click", "#next", function () {
+        page++;
+        $('#next').attr({
+            "href": direction + page
+        });
+    });
+
+    //if (page != localStorage.getItem("currpage"))
+    //{
+    //    localStorage.setItem("currpage", page + "");
+    //    console.log(localStorage.getItem("currpage"));
+    //    window.location.href = direction + localStorage.getItem("currpage");
+    //}
+</script>
+
+@*<script>
     var pagin;
     var direction;
 
@@ -95,7 +170,7 @@
         //localStorage.setItem("currpage", page + "");
     }*@
 
-    $("#pageid").text(localStorage.getItem("currentpage"));
+    @*$("#pageid").text(localStorage.getItem("currentpage"));
 
     function OtherPage(){
         console.log("Recargando");
@@ -122,5 +197,5 @@
                 window.location.href = direction;
             }
         },
-    });
-</script>
+    });*@
+@*</script>*@

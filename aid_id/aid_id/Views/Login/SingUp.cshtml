@@ -47,7 +47,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="labelEmail">Email</span>
             </div>
-            <input type="text" class="form-control" id="inputEmail" name="inputEmailRegister" placeholder="Email" value="@ViewBag.EmailRegister">
+            <input type="text" class="form-control" id="inputEmail" name="inputEmailRegister" placeholder="Email" value="@ViewBag.EmailRegister" disabled>
         </div>
         <!--   PASSWORD1   -->
         <div class="input-group mb-3">
@@ -63,7 +63,6 @@
             </div>
             <input type="password" class="form-control" id="inputPass2" name="inputPass2Register" placeholder="Repita su contraseña">
         </div>
-
         <!--   GLUCEMIA   -->
         <div>
             <div class="input-group mb-3">
@@ -76,18 +75,19 @@
                     </div>
                 </div>
             </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="labelGluMax" name="labelGluMaxRegister">Glucemia Max (mg/dl)</span>
-                </div>
-                <div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="labelGluMax">Glucemia Max (mg/dl)</span>
+            </div>
+            <div>
+                <div class="row">
                     <div class="col">
                         <input type="number" class="form-control" id="inputGluMax" name="inputGluMaxRegister" placeholder="Max (mg/dl)" value="120">
                     </div>
                 </div>
             </div>
         </div>
-
         <!--   Ratio Ins/Glu (mg/dl)/U   -->
         <div>
             <div class="input-group mb-3">
@@ -123,8 +123,6 @@
                 <input type="button" class="btn btn-light input-button-submit-class float-right" name="sendRegister" value="Enviar" id="sendRegister" onclick="helperGroup()" />
             </div>
         </div>
+    </div>
 </form>
 <script src="~/Scripts/Login_SignUp_Veification.js"></script>
-<script>
-
-</script>

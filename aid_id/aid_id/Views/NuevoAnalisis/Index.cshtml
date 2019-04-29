@@ -41,9 +41,26 @@
         </div>
 
         <div class="form-group">
+            <div id="div-plato-mediano" class="col-xs-12 col-md-6">
+                <img src="~/Resources/Metodo_Del_Plato.png" width="200" height="200" />
+                <input type="checkbox" name="platoMediano" />Plato Mediano
+            </div>
+            <div id="div-plato-mediano" class="col-xs-12 col-md-6">
+                <img src="~/Resources/Metodo_Del_Plato.png" width="300" height="300" />
+                <input type="checkbox" name="platoGrande" />Plato Grande
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.IntensidadDeporte, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.IntensidadDeporte, new { htmlAttributes = new { @class = "form-control" } })
+                @{
+                    List<SelectListItem> intensidadDeporte = new List<SelectListItem>();
+                    intensidadDeporte.Add(new SelectListItem { Text = "Leve", Value = "Leve" });
+                    intensidadDeporte.Add(new SelectListItem { Text = "Medio", Value = "Medio" });
+                    intensidadDeporte.Add(new SelectListItem { Text = "Fuerte", Value = "Fuerte" });
+                }
+                @Html.DropDownListFor(model => model.IntensidadDeporte, intensidadDeporte, "-- Select Status --", new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.IntensidadDeporte, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -51,7 +68,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FechaHora, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaHora, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.FechaHora, new { htmlAttributes = new { @class = "form-control, fecha-hora" } })
                 @Html.ValidationMessageFor(model => model.FechaHora, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -76,13 +93,28 @@
 
 <script>
     $(document).ready(function () {
+        @{
+            List<SelectListItem> cantidadComida = new List<SelectListItem>();
+            cantidadComida.Add(new SelectListItem { Text = "Un octavo", Value = "Octavo" });
+            cantidadComida.Add(new SelectListItem { Text = "Un cuarto", Value = "Cuarto" });
+            cantidadComida.Add(new SelectListItem { Text = "Medio", Value = "Medio" });
+            cantidadComida.Add(new SelectListItem { Text = "Entero", Value = "Entero" });
+        }@
         $("#add-alimento").click(function () {
             if ($("#select-alimentos option:selected").text() != "--Escoge un alimento--") {
                 var carbohidratosAlimento = $("#select-alimentos").val();
                 var nombreAlimento = $("#select-alimentos option:selected").text();
-                $("#tabla-listado-alimentos").append("<tr><td>" + nombreAlimento + "</td><td>" + carbohidratosAlimento + "</tr>");
+                $("#tabla-listado-alimentos").append("<tr><td>" + nombreAlimento + "</td><td>" + carbohidratosAlimento + "</td><td>" + cantidadComida + "</tr>");
             }
             else alert("Esto no es un alimento");
+
+            $(function () {
+                $(".date-select").datepicker({ dateFormat: 'dd.mm.yy' });
+                $(".date-select").datepicker($.datepicker.regional['sl']);
+            });
+            $(function () {
+                $("#fecha-hora").datepicker('setDate', new Date());
+            });
         });
     });
 </script>

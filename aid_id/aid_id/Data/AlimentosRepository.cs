@@ -18,7 +18,7 @@ namespace aid_id.Data
                     .Select(n =>
                     new SelectListItem
                     {
-                        Value = n.Id_alimento.ToString(),
+                        Value = n.Carbohidratos.ToString(),
                         Text = n.Nombre
                     }).ToList();
                 var alimentostip = new SelectListItem()

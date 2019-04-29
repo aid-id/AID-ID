@@ -30,18 +30,6 @@ namespace aid_id.Controllers
         }
 
         //POST FORM FROM -> SignInForm
-        //http://localhost:51356/Login/Register
-        /*
-        [HttpPost]
-        [Route("/Login/SingIn/Register")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Register()
-        {
-            ViewBag.Nombre = Request.Form["inputNameRegister"];
-            
-        }*/
-
-        //POST FORM FROM -> SignInForm
         //http://localhost:51356/Login/Verify
         [HttpPost]
         [Route("/Login/SingIn/Verify")]

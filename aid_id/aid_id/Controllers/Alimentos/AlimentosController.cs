@@ -16,7 +16,8 @@ namespace aid_id.Controllers.Alimentos
         private Aid_idContext db = new Aid_idContext();
 
         private string Filter = null;
-
+        public double pageUpRound;
+       
         // GET: Alimentos
         /// <summary>
         /// Recoge de la BD la lista de alimentos.
@@ -43,7 +44,8 @@ namespace aid_id.Controllers.Alimentos
             // Calcular el total de botones de paginación 
             int pageCount = db.Alimentos.Count();
             double totalPages = pageCount / 10;
-            double pageUpRound = Math.Ceiling(totalPages);
+            pageUpRound = Math.Ceiling(totalPages);
+            ViewBag.totalSQLpages = pageUpRound;
 
             string query = "SELECT * FROM Alimentos";
             var allAlimentos = db.Alimentos.SqlQuery(query).ToList();
@@ -63,6 +65,7 @@ namespace aid_id.Controllers.Alimentos
             }
 
             query += " WHERE nombre LIKE '%" + filter + "%'";
+
             return View(allAlimentos);
         }
 

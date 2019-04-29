@@ -170,6 +170,14 @@
     <Compile Include="Migrations\201904270756371_idUsuario_nuevoanalisis.Designer.cs">
       <DependentUpon>201904270756371_idUsuario_nuevoanalisis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904291106233_carbohidratos.cs" />
+    <Compile Include="Migrations\201904291106233_carbohidratos.Designer.cs">
+      <DependentUpon>201904291106233_carbohidratos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904291123402_no_carbohidratos.cs" />
+    <Compile Include="Migrations\201904291123402_no_carbohidratos.Designer.cs">
+      <DependentUpon>201904291123402_no_carbohidratos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\aid_idContext.cs" />
     <Compile Include="Models\Alimentos.cs" />
@@ -229,6 +237,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904270756371_idUsuario_nuevoanalisis.resx">
       <DependentUpon>201904270756371_idUsuario_nuevoanalisis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904291106233_carbohidratos.resx">
+      <DependentUpon>201904291106233_carbohidratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904291123402_no_carbohidratos.resx">
+      <DependentUpon>201904291123402_no_carbohidratos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

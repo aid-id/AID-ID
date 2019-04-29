@@ -29,6 +29,26 @@ namespace aid_id.Controllers
             return View("Index");
         }
 
+        [Route("/Login/Logged")]
+        public ActionResult Logged()
+        {
+            string value = "";
+            var cookieLogin = ControllerContext.HttpContext.Request.Cookies["cookieLogin"];
+            if (cookieLogin != null)
+            {
+                value = cookieLogin.Value;
+            }
+            if (value == "1")
+            {
+                return View("Logged");
+            }
+            else
+            {
+                return View("Index");
+            }
+            
+
+        }
         //POST FORM FROM -> SignInForm
         //http://localhost:51356/Login/Verify
         [HttpPost]
@@ -70,7 +90,8 @@ namespace aid_id.Controllers
                         HttpCookie cookieEmail = new HttpCookie("cookieEmail", email);
                         cookieLogin.Expires = DateTime.Now.AddYears(1); //the cookie is deleted after one year
                         ControllerContext.HttpContext.Response.SetCookie(cookieEmail);
-                        return View("Logged");
+                        return RedirectToAction("Logged", "Login");
+                        //return View("Logged");
                     }
                     catch (InvalidOperationException) //If login fail...
                     {
@@ -186,9 +207,10 @@ namespace aid_id.Controllers
         {
             HttpCookie cookieEmail = new HttpCookie("cookieEmail", "");
             Response.SetCookie(cookieEmail);
-            HttpCookie cookieLogin = new HttpCookie("cookieLogin", "");
+            HttpCookie cookieLogin = new HttpCookie("cookieLogin", "0");
             Response.SetCookie(cookieLogin);
-            return View("Index");
+            //return View("Index");
+            return RedirectToAction("Index", "Login");
         }
     }
 }

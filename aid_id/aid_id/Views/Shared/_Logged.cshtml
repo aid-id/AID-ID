@@ -1,0 +1,38 @@
+﻿
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top" id="navBar">
+
+    <a class="navbar-brand" href=@Url.Action("Index","Login")>AID-ID</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <div class="nav-color-class" id="menu-average-id">
+                <a class="nav-item nav-link active" onclick="window.location.href='@Url.Action("","")';">PROMEDIOS <span class="sr-only">(current)</span></a>
+            </div>
+            <div class="nav-color-class" id="menu-food-id">
+                <a class="nav-item nav-link" onclick="window.location.href='@Url.Action("Index","Alimentos", new { pag = 1 })'" ;>ALIMENTOS</a>
+            </div>
+            <div class="nav-color-class" id="menu-settings-id">
+                <a class="nav-item nav-link" href="#">AJUSTES</a>
+            </div>
+            <div class="nav-color-class" id="menu-settings-id">
+                <a class="nav-item nav-link" onclick="window.location.href='@Url.Action("InsulineResults","InsulineResults")';">Resultados(pruebas)</a>
+            </div>
+            <div class="btn-group dropright pull-right">
+                <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Info</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/Login/Logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

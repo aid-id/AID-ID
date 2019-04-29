@@ -1,4 +1,21 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web
+
+@{
+    string test = "";
+    if (HttpContext.Current.Request.Cookies["cookieLogin"] != null)
+    {
+        test = HttpContext.Current.Request.Cookies["cookieLogin"].Value;
+        //TempData["test"] = test;
+    }
+    else
+    {
+        test = "0";
+        //HttpContext.Current.Response.Cookies["cookieLogin"].Value = test;
+        TempData["test"] = test;
+    }
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -28,13 +45,15 @@
     <!-- FONT AWESOME LIBRERY FOR ICON BUTTONS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 
-   
+
     <!--   PAGINATOR    -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
 
-
+    <!--   CSS    -->
+    <style>
+    </style>
 </head>
 <body class="body-background-class">
     <header>
@@ -43,18 +62,18 @@
 
             <a class="navbar-brand" href=@Url.Action("Index","Login")>AID-ID</a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            <button class="navbar-toggler hideClass" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse hideClass" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <div class="nav-color-class" id="menu-average-id">
                         <a class="nav-item nav-link active" onclick="window.location.href='@Url.Action("","")';">PROMEDIOS <span class="sr-only">(current)</span></a>
                     </div>
                     <div class="nav-color-class" id="menu-food-id">
-                        <a class="nav-item nav-link" onclick="window.location.href='@Url.Action("Index","Alimentos")';">ALIMENTOS</a>
+                        <a class="nav-item nav-link" onclick="window.location.href='@Url.Action("Index","Alimentos", new { pag = 1 })'";>ALIMENTOS</a>
                     </div>
                     <div class="nav-color-class" id="menu-settings-id">
                         <a class="nav-item nav-link" href="#">AJUSTES</a>
@@ -82,8 +101,8 @@
         <div class="body-center-block-class">
             @RenderBody()
         </div>
-        
-        
+
+
         <footer class="fixed-bottom">
             <div class="footer-content-class">
                 <p>&copy; @DateTime.Now.Year - AID-ID Application</p>
@@ -92,3 +111,13 @@
     </div>
 </body>
 </html>
+
+<script>/*
+    alert(window.localStorage.getItem("Test"));   
+    
+    if (temp == "") {
+        alert(window.localStorage.getItem("Test"));   
+    } else {
+        $(".hideClass").attr('style', 'display: none !important');
+    }*/
+</script>

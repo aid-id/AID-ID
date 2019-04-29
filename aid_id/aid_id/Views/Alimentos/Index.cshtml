@@ -4,7 +4,33 @@
     ViewBag.Title = "Alimentos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="my_jquery_functions.js"></script>
+    <style>
+        .pagination {
+            display: inline-block;
+        }
 
+            .pagination a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+            }
+
+                .pagination a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                    border-radius: 5px;
+                }
+
+                .pagination a:hover:not(.active) {
+                    background-color: #ddd;
+                    border-radius: 5px;
+                }
+    </style>
+</head>
 <body>
     <h2>Alimentos</h2>
 
@@ -62,65 +88,58 @@
             </tbody>
         </table>
 
-
         <!--   PAGINATOR FOR CHANGE THE TOTAL 10 VIEW   (jqEx06)-->
-        <div class="row">
-            <div class="col">
-                xxxxxxxxxxxxxxxxxxxxxx
-                <ul id="exPagination" class="pagination-sm">
-                    <li class="btPagination prev">
-                        <button class="exLink" id="prev">Prev</button>
-                    </li>
-                    <li class="btPagination">
-                        <button id="pageid" class="exLink"></button>
-                    </li>
-                    <li class="btPagination next">
-                        <button class="exLink" id="next">Next</button>
-                    </li>
-                </ul>
-                <button onclick="OtherPage()">Other</button>
-            </div>
+        <div class="pagination">
+            <a id="previous"><</a>
+            <a id="current">1</a>
+            <a id="next">></a>
         </div>
     </div>
 </body>
 
 <script>
-    var pagin;
-    var direction;
+    var direction = '@Url.Action("Index", "Alimentos")' + "?filter=&pag=";
 
-    @*if (localStorage.getItem("currpage")===null) {
-        direction = '@Url.Action("Index", "Alimentos")' + "?filter=&pag=" + page;
-        window.location.href = direction;
-        console.log("Soy" + page);
-        //localStorage.setItem("currpage", page + "");
-    }*@
+    localStorage.setItem('currpage', $("#current").attr("text"));
+    var fullURL = String(window.location.href);
+    var totalPages = parseInt(@ViewBag.totalSQLpages);
+    var indexDigits = 0;
+    for (var i = fullURL.length - 1; i >= fullURL.length - 4; i--)
+    {
+        if (!isNaN(fullURL[i]))
+            indexDigits++;
+        else
+            break;
+    }
+    //console.log("Index Digits " + indexDigits);
+    var indexURL = String(fullURL.substr(fullURL.length - indexDigits));
+    var page = parseInt(indexURL);
 
-    $("#pageid").text(localStorage.getItem("currentpage"));
+    $("#current").text(indexURL);
+    //console.log(fullURL);
+    console.log("Estamos en la página " + indexURL);
 
-    function OtherPage(){
-        console.log("Recargando");
-        //window.location.href=direction;
-        //return direction;
-    };
+    if (totalPages != null && totalPages != "")
+    {
+        console.log("Páginas totales " + totalPages);
+    }
 
-    $('#exPagination').twbsPagination({
-        totalPages: 20,
-        visiblePages: 1,
-        next: 'Next',
-        prev: 'Prev',
-        onPageClick: function ChangePage(event, page) {
-            //localStorage.setItem("currpage", page +"");
-            console.log("Estás en la página " + page);
-            $('#page-content').text('Page ' + page) + ' content here';
-            direction = '@Url.Action("Index", "Alimentos")' + "?filter=&pag=" + page;
-            
-            //pagin = page;
+    if (page > 1) {
+        $(document).on("click", "#previous", function () {
+            page--;
+            $('#previous').attr({
+                "href": direction + page
+            });
+        });
+    }
 
-            if (page != localStorage.getItem("currpage")) {
-                localStorage.setItem("currpage", page +"");
-                console.log(localStorage.getItem("currpage"));
-                window.location.href = direction;
-            }
-        },
+    $(document).on("click", "#next", function () {
+        
+        if (page < totalPages) {
+            page++;
+            $('#next').attr({
+                "href": direction + page
+            });
+        }
     });
 </script>

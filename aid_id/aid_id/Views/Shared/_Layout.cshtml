@@ -5,13 +5,11 @@
     if (HttpContext.Current.Request.Cookies["cookieLogin"] != null)
     {
         test = HttpContext.Current.Request.Cookies["cookieLogin"].Value;
-        //TempData["test"] = test;
     }
     else
     {
         test = "0";
-        //HttpContext.Current.Response.Cookies["cookieLogin"].Value = test;
-        TempData["test"] = test;
+        HttpContext.Current.Response.Cookies["cookieLogin"].Value = test;
     }
 }
 
@@ -44,7 +42,7 @@
 
     <!-- FONT AWESOME LIBRERY FOR ICON BUTTONS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-
+    <!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">-->
 
     <!--   PAGINATOR    -->
 
@@ -52,6 +50,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
 
     <!--   CSS    -->
+
     <style>
     </style>
 </head>
@@ -89,7 +88,7 @@
                             <a class="dropdown-item" href="#">Info</a>
                             <a class="dropdown-item" href="#">Settings</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <a class="dropdown-item" href="/Login/Logout">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -112,12 +111,13 @@
 </body>
 </html>
 
-<script>/*
-    alert(window.localStorage.getItem("Test"));   
-    
-    if (temp == "") {
-        alert(window.localStorage.getItem("Test"));   
-    } else {
-        $(".hideClass").attr('style', 'display: none !important');
-    }*/
+<script>
+    $(temp).change(function () {
+        if (temp == "1") {
+            $(".hideClass").attr('style', 'visi: none !important');
+        } else {
+            $(".hideClass").attr('style', 'display: none !important');
+        }
+    });
+   
 </script>

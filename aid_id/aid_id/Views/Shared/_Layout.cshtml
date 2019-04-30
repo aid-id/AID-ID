@@ -1,6 +1,6 @@
 ﻿@using System.Web
 
-@{
+@*@{
     string login = "";
     string email = "";
     try
@@ -54,8 +54,7 @@
     <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
 
     <!-- FONT AWESOME LIBRERY FOR ICON BUTTONS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.4/css/all.css">
 
     <!--   PAGINATOR    -->
 
@@ -80,9 +79,12 @@
         catch (Exception) {@Html.Partial("_Login"); }
     </header>
 
-    <div class="container body-content">
-        <div class="body-center-block-class">
-            @RenderBody()
+    <div class="container ">
+        @*body-content*@
+        <div class="">@*body-center-block-class*@
+            <div class="div-align-center-class">
+                @RenderBody()
+            </div>
         </div>
 
         <footer class="fixed-bottom">

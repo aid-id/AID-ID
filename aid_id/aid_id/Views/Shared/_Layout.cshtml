@@ -1,15 +1,29 @@
 ﻿@using System.Web
 
-@{
+@*@{
     string login = "";
-    if (HttpContext.Current.Request.Cookies["cookieLogin"].Value == "1")
+    string email = "";
+    try
     {
-        login = HttpContext.Current.Request.Cookies["cookieLogin"].Value;
+        if (HttpContext.Current.Request.Cookies["cookieLogin"].Value == "1")
+        {
+            login = HttpContext.Current.Request.Cookies["cookieLogin"].Value;
+        }
+        else if (HttpContext.Current.Request.Cookies["cookieLogin"].Value != "1")
+        {
+            login = "";
+        }
+
+        if (HttpContext.Current.Request.Cookies["cookieEmail"].Value == "1")
+        {
+            email = HttpContext.Current.Request.Cookies["cookieEmail"].Value;
+        }
+        else if (HttpContext.Current.Request.Cookies["cookieEmail"].Value != "1")
+        {
+            email = "";
+        }
     }
-    else if (HttpContext.Current.Request.Cookies["cookieLogin"].Value == "0")
-    {
-        login = HttpContext.Current.Response.Cookies["cookieLogin"].Value;
-    }
+    catch (Exception){}
 }
 
 <!DOCTYPE html>
@@ -40,40 +54,38 @@
     <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
 
     <!-- FONT AWESOME LIBRERY FOR ICON BUTTONS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.4/css/all.css">
 
     <!--   PAGINATOR    -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
-
-    <!--   CSS    -->
-
-    <style>
-    </style>
 </head>
 <body class="body-background-class">
     <header>
-        @if (@login == "1")
+        @try
         {
-            /*login nav*/
-            @Html.Partial("_Logged");
+            if (@login == "1")
+            {
+                /*login nav*/
+                @Html.Partial("_Logged");
+            }
+            else
+            {
+                /*empty nav*/
+                @Html.Partial("_Login");
+            }
         }
-        else
-        {
-            /*empty nav*/
-            @Html.Partial("_Login");
-            
-        }
-
+        catch (Exception) {@Html.Partial("_Login"); }
     </header>
 
-    <div class="container body-content">
-        <div class="body-center-block-class">
-            @RenderBody()
+    <div class="container ">
+        @*body-content*@
+        <div class="">@*body-center-block-class*@
+            <div class="div-align-center-class">
+                @RenderBody()
+            </div>
         </div>
-
 
         <footer class="fixed-bottom">
             <div class="footer-content-class">
@@ -83,11 +95,3 @@
     </div>
 </body>
 </html>
-
-<script>
-
-    /*
-
-    }
-*/
-</script>

@@ -48,7 +48,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <div class="nav-color-class" id="menu-average-id">
-                <a class="nav-item nav-link active" onclick="window.location.href='@Url.Action("","")';">PROMEDIOS <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" onclick="window.location.href='@Url.Action("Index","Average")';">MIS INFORMES <span class="sr-only">(current)</span></a>
             </div>
             <div class="nav-color-class" id="menu-food-id">
                 <a class="nav-item nav-link" onclick="window.location.href='@Url.Action("Index","Alimentos", new { pag = 1 })'" ;>ALIMENTOS</a>
@@ -65,10 +65,10 @@
                     <i class="fa fa-user"></i>
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="Login/Info">Info</a>
+                    <a class="dropdown-item" onclick="window.location.href='@Url.Action("Info","Login")';">Info</a>
                     <!--<a class="dropdown-item" href="/Login/Settings">Settings</a>-->
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/Login/Logout">Logout</a>
+                    <a class="dropdown-item" onclick="window.location.href='@Url.Action("Logout","Login")';">Logout</a>
                 </div>
             </form>
         </div>

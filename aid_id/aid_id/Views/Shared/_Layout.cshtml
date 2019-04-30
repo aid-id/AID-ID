@@ -2,15 +2,29 @@
 
 @*@{
     string login = "";
-    if (HttpContext.Current.Request.Cookies["cookieLogin"].Value == "1")
+    string email = "";
+    try
     {
-        login = HttpContext.Current.Request.Cookies["cookieLogin"].Value;
+        if (HttpContext.Current.Request.Cookies["cookieLogin"].Value == "1")
+        {
+            login = HttpContext.Current.Request.Cookies["cookieLogin"].Value;
+        }
+        else if (HttpContext.Current.Request.Cookies["cookieLogin"].Value != "1")
+        {
+            login = "";
+        }
+
+        if (HttpContext.Current.Request.Cookies["cookieEmail"].Value == "1")
+        {
+            email = HttpContext.Current.Request.Cookies["cookieEmail"].Value;
+        }
+        else if (HttpContext.Current.Request.Cookies["cookieEmail"].Value != "1")
+        {
+            email = "";
+        }
     }
-    else if (HttpContext.Current.Request.Cookies["cookieLogin"].Value != "1")
-    {
-        login = HttpContext.Current.Response.Cookies["cookieLogin"].Value;
-    }
-}*@
+    catch (Exception){}
+}
 
 <!DOCTYPE html>
 <html>
@@ -44,26 +58,25 @@
 
     <!--   PAGINATOR    -->
 
-    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>*@
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
 </head>
 <body class="body-background-class">
     <header>
-        @*@if (@login == "1")
+        @try
         {
-            /*login nav*/
-            @Html.Partial("_Logged");
+            if (@login == "1")
+            {
+                /*login nav*/
+                @Html.Partial("_Logged");
+            }
+            else
+            {
+                /*empty nav*/
+                @Html.Partial("_Login");
+            }
         }
-        else
-        {
-            /*empty nav*/
-            @Html.Partial("_Login");
-
-        }*@
-        
-        @Html.Partial("_Logged");
-        
+        catch (Exception) {@Html.Partial("_Login"); }
     </header>
 
     <div class="container ">
@@ -73,7 +86,6 @@
                 @RenderBody()
             </div>
         </div>
-
 
         <footer class="fixed-bottom">
             <div class="footer-content-class">

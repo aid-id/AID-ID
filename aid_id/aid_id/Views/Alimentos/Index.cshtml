@@ -10,6 +10,7 @@
     <style>
         .pagination {
             display: inline-block;
+            text-align: right;
         }
 
             .pagination a {
@@ -17,84 +18,92 @@
                 float: left;
                 padding: 8px 16px;
                 text-decoration: none;
+                text-align: right;
             }
 
-                .pagination a.active {
-                    background-color: #4CAF50;
-                    color: white;
-                    border-radius: 5px;
-                }
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
 
-                .pagination a:hover:not(.active) {
-                    background-color: #ddd;
-                    border-radius: 5px;
-                }
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+            color: black;
+            border-radius: 5px;
+        }
+        .pagination a.current-page{
+            background-color: #454d55;
+            color: whitesmoke;
+        }
+        .pagination a.current-page:hover:not(.active) {
+            background-color: #454d55;
+            color: whitesmoke;
+        }
     </style>
 </head>
 <body>
     <h2>Alimentos</h2>
-
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-light" onclick="window.location.href='@Url.Action("Create","Alimentos")';">Añadir</button>
-            <form asp-controller="Alimentos" asp-action="Search" method="get">
-                <input type="text" name="filter">
-                <button class="btn btn-light" onclick="window.location.href='@Url.Action("Index","Alimentos")';">Filtrar</button>
-            </form><br>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-light" onclick="window.location.href='@Url.Action("Create","Alimentos")';">Añadir</button>
+                <form asp-controller="Alimentos" asp-action="Search" method="get">
+                    <input type="text" name="filter">
+                    <button class="btn btn-light" onclick="window.location.href='@Url.Action("Index","Alimentos")';">Filtrar</button>
+                </form>
+                <br>
+            </div>
+            <div class="pagination">
+                <br>
+                <a class="btn btn-light" id="previous"><</a>
+                <a class="btn btn-dark current-page" id="current">1</a>
+                <a class="btn btn-light" id="next">></a>
+            </div>
         </div>
-    </div>
-
-    <div class="table-responsive div-food-class">
-        <table class="table  table-striped">
-            <thead class="table-dark">
-                <tr>
-                    <th colspan="2">
-                        @Html.DisplayNameFor(model => model.Nombre)
-                    </th>
-                    <th>
-                        CHs
-                    </th>
-                    <th>
-                        Prot
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Grasas)
-                    </th>
-                </tr>
-            </thead>
-            <tbody class="table-light">
-                @foreach (var item in Model)
-                {
+        <div class="table-responsive div-food-class">
+            <table class="table  table-striped">
+                <thead class="table-dark">
                     <tr>
-                        <td scope="col">
-                            <button class="btn btn-dark" onclick="window.location.href='@Url.Action("Edit", "Alimentos", new { id = item.Id_alimento })';">
-                                <i class="far fa-edit"></i>
-                            </button>
-                        </td>
-                        <td scope="col">
-                            @Html.DisplayFor(modelItem => item.Nombre)
-                        </td>
-                        <td scope="col">
-                            @Html.DisplayFor(modelItem => item.Carbohidratos)
-                        </td>
-                        <td scope="col">
-                            @Html.DisplayFor(modelItem => item.Proteinas)
-                        </td>
-                        <td scope="col">
-                            @Html.DisplayFor(modelItem => item.Grasas)
-                        </td>
+                        <th colspan="2">
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+                        <th>
+                            CHs
+                        </th>
+                        <th>
+                            Prot
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Grasas)
+                        </th>
                     </tr>
-                }
-            </tbody>
-        </table>
-
-        <!--   PAGINATOR FOR CHANGE THE TOTAL 10 VIEW   (jqEx06)-->
-        <div class="pagination">
-            <a id="previous"><</a>
-            <a id="current">1</a>
-            <a id="next">></a>
+                </thead>
+                <tbody class="table-light">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td scope="col">
+                                <button class="btn btn-dark" onclick="window.location.href='@Url.Action("Edit", "Alimentos", new { id = item.Id_alimento })';">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </td>
+                            <td scope="col">
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td scope="col">
+                                @Html.DisplayFor(modelItem => item.Carbohidratos)
+                            </td>
+                            <td scope="col">
+                                @Html.DisplayFor(modelItem => item.Proteinas)
+                            </td>
+                            <td scope="col">
+                                @Html.DisplayFor(modelItem => item.Grasas)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
-    </div>
 </body>
 
 <script>

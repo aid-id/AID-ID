@@ -4,7 +4,7 @@
     TempData["EmailConfirmed"] = @ViewBag.Email;
 }
 
-<div class="div-align-center-class">
+<div class="">
     <div class="container">
         <form id="SignInVerify" method="post">
             @Html.AntiForgeryToken()
@@ -13,16 +13,22 @@
                     <!-- 50% -->
                     <label class="inTittle">EMAIL</label>
                 </div>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3 col-md-4">
+                    <input type="text" class="form-control input-button-login-class" aria-describedby="basic-addon3"
+                           value="@ViewBag.Email" id="emailSignIn" name="inputEmail">
+                </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <!-- 50% -->
                     <label class="inTittle">PASSWORD</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control input-button-login-class" aria-describedby="basic-addon3"
-                           value="@ViewBag.Email" id="emailSignIn" name="inputEmail" >
-                    <input type="password" class="form-control input-button-login-class" id="password" name="inputPass" placeholder="&#xf084; Introduzca su contraseña">
+                <div class="input-group mb-3 col-md-4">
+                    <input type="password" class="form-control input-button-login-class" id="password" name="inputPass" placeholder="&#xf13e; Introduzca su contraseña">
                 </div>
             </div>
             <div class="row">

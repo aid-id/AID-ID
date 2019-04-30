@@ -3,127 +3,83 @@
     ViewBag.Title = "SingUp";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 <!--   FORMULARIO DE REGISTRO   -->
 <form id="RegisterForm" action="/Login/Register" method="post">
     @Html.AntiForgeryToken()
     <div id="blockAnalysis">
-        <!--   NOMBRE   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelName">Nombre</span>
-            </div>
-            <input type="text" class="form-control" id="inputName" name="inputNameRegister" placeholder="Indique su nombre">
-        </div>
-        <!--   APELLIDO   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelSurname">Apellido</span>
-            </div>
-            <input type="text" class="form-control" id="inputSurname" name="inputSurnameRegister" placeholder="Indique sus apellidos">
-        </div>
-        <!--   EDAD   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelAge">Edad</span>
-            </div>
-            <input type="number" class="form-control" id="inputAge" name="inputAgeRegister" placeholder="Indique su edad">
-        </div>
-        <!--   PESO   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelWeight">Peso</span>
-            </div>
-            <input type="number" class="form-control" id="inputWeight" name="inputWeightRegister" placeholder="Indique su peso en kg">
-        </div>
-        <!--   ALTURA   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelHeight">Altura</span>
-            </div>
-            <input type="number" class="form-control" id="inputHeight" name="inputHeightRegister" placeholder="Altura en cm sin decimals ejem: 179">
-        </div>
-        <!--   EMAIL   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelEmail">Email</span>
-            </div>
-            <input type="text" class="form-control" id="inputEmailSingUp" name="inputEmailRegister" placeholder="Email" value="@ViewBag.EmailRegister">
-        </div>
-        <!--   PASSWORD1   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelPass1">Contraseña</span>
-            </div>
-            <input type="password" class="form-control" id="inputPass1" name="inputPass1Register" placeholder="Indique su contraseña">
-        </div>
-        <!--   PASSWORD2   -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelPass2">Confirmación</span>
-            </div>
-            <input type="password" class="form-control" id="inputPass2" name="inputPass2Register" placeholder="Repita su contraseña">
-        </div>
-        <!--   GLUCEMIA   -->
-        <div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="labelGluMin">Glucemia Min (mg/dl)</span>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="number" class="form-control" id="inputGluMin" name="inputGluMinRegister" placeholder="Min (mg/dl)" value="80">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="labelGluMax">Glucemia Max (mg/dl)</span>
-            </div>
-            <div>
-                <div class="row">
-                    <div class="col">
-                        <input type="number" class="form-control" id="inputGluMax" name="inputGluMaxRegister" placeholder="Max (mg/dl)" value="120">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--   Ratio Ins/Glu (mg/dl)/U   -->
-        <div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="labelIns">Ratio Ins/Glu (mg/dl)/U</span>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="number" class="form-control" id="inputInsGlu" name="inputInsGluRegister" placeholder="Ejem 20 (mg/dl)/U" value="20">
-                    </div>
-                </div>
-            </div>
-            <!--   Ratio Ins/Ch (g/U)     -->
-            <div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="labelIns">Ratio Ins/CH (mg/dl)/U</span>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <input type="number" class="form-control" id="inputInsCh" name="inputInsChRegister" placeholder="Ejem 20 (g/U)" value="5">
-                        </div>
-                    </div>
-                </div>
-                <!--   INSULINA / CARBOHIDRATOS   -->
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Total insulina</span>
-                    </div>
-                    <input type="number" class="form-control" placeholder="Indique su insulina total" id="inputInsTot" name="inputInsTotRegister">
-                </div>
-                <!--   INSULINA / GLUCOSA   -->
-                <input type="button" class="btn btn-light input-button-submit-class float-right" name="sendRegister" value="Enviar" id="sendRegister" onclick="helperGroup()" />
-            </div>
-        </div>
-    </div>
+
+
+        <table class="table">
+            <tbody>
+
+                <tr>
+                    <th><span class="input-group-text bg-dark text-white" id="labelName">Nombre</span></th>
+                    <td><input type="text" class="form-control" id="inputName" name="inputNameRegister" placeholder="Indique su nombre"></td>
+                </tr>
+                <tr>
+                    <th><span class="input-group-text bg-dark text-white" id="labelSurname">Apellido</span></th>
+                    <td><input type="text" class="form-control" id="inputSurname" name="inputSurnameRegister" placeholder="Indique sus apellidos"></td>
+                </tr>
+                <tr>
+                    <th><span class="input-group-text bg-dark text-white" id="labelAge">Edad</span></th>
+                    <td><input type="number" class="form-control" id="inputAge" name="inputAgeRegister" placeholder="Indique su edad"></td>
+                </tr>
+                <tr>
+                    <th><span class="input-group-text bg-dark text-white" id="labelWeight">Peso</span></th>
+                    <td><input type="number" class="form-control" id="inputWeight" name="inputWeightRegister" placeholder="Indique su peso en kg"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <span class="input-group-text bg-dark text-white" id="labelHeight">Altura</span>
+                    </th>
+                    <td><input type="number" class="form-control" id="inputHeight" name="inputHeightRegister" placeholder="Altura en cm sin decimals ejem: 179"></td>
+                </tr>
+
+                <tr>
+                    <th><span class="input-group-text bg-dark text-white" id="labelEmail">Email</span></th>
+                    <td><input type="text" class="form-control" id="inputEmailSingUp" name="inputEmailRegister" placeholder="Email" value="@ViewBag.EmailRegister"></td>
+                </tr>
+                
+                <tr>
+                    <th> <span class="input-group-text bg-dark text-white" id="labelPass1">Contraseña</span></th>
+                    <td><input type="password" class="form-control" id="inputPass1" name="inputPass1Register" placeholder="Indique su contraseña"></th></td>
+                 </tr>
+
+    <tr>
+        <th><span class="input-group-text bg-dark text-white" id="labelPass2">Confirmación</span></th>
+        <td><input type="password" class="form-control" id="inputPass2" name="inputPass2Register" placeholder="Repita su contraseña"></td>
+    </tr>
+
+    <tr>
+        <th> <span class="input-group-text bg-dark text-white" id="labelGluMin">Gluc Min/Max (mg/dl)</span></th>
+        <td class="input-group">
+            <input type="number" class="form-control" id="inputGluMin" name="inputGluMinRegister" placeholder="Min (mg/dl)" value="80">
+            <span>-</span>
+            <input type="number" class="form-control" id="inputGluMax" name="inputGluMaxRegister" placeholder="Max (mg/dl)" value="120">
+        </td>
+    </tr>
+
+    <tr>
+        <th><span class="input-group-text bg-dark text-white" id="labelIns">Ratio Ins/Glu (mg/dl)/U</span></th>
+        <td><input type="number" class="form-control" id="inputInsGlu" name="inputInsGluRegister" placeholder="Ejem 20 (mg/dl)/U" value="20"></td>
+    </tr>
+
+    <tr>
+        <th><span class="input-group-text bg-dark text-white" id="labelIns">Ratio Ins/CH (mg/dl)/U</span></th>
+        <td><input type="number" class="form-control" id="inputInsCh" name="inputInsChRegister" placeholder="Ejem 20 (g/U)" value="5"></td>
+    </tr>
+
+    <tr>
+        <th><span class="input-group-text  bg-dark text-white" id="basic-addon1">Total insulina</span></th>
+        <td><input type="number" class="form-control" placeholder="Indique su insulina total" id="inputInsTot" name="inputInsTotRegister"></td>
+    </tr>
+
+                <tr>
+                    <th></th>
+                    <td><input type="button" class="btn btn-light float-right" name="sendRegister" value="Enviar" id="sendRegister" onclick="helperGroup()" /></td>
+                </tr>
+    </tbody>
+    </table>
 </form>
 <script src="~/Scripts/Login_SignUp_Veification.js"></script>

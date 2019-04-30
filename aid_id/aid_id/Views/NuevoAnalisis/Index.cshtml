@@ -4,82 +4,106 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>NuevoAnalisis</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" })
+    <div id="container">
+        <div class="form-horizontal">
+            <h4>Nuevo Analisis</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10 row">
+                    @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.NombreAlimento, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input type="button" value="+" class="btn btn-default" id="add-alimento" onclick="AñadirAlimento()"/>
-                @Html.DropDownListFor(model => model.NombreAlimento, new SelectList(Model.Alimentos, "Value", "Text"), 
-                    htmlAttributes: new { @class = "form-control", @id = "select-alimentos"})
-                @Html.ValidationMessageFor(model => model.NombreAlimento, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.NombreAlimento, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10 row">
+                    @Html.DropDownListFor(model => model.NombreAlimento, new SelectList(Model.Alimentos, "Value", "Text"), 
+                        htmlAttributes: new { @class = "form-control col-md-10", @id = "select-alimentos"})
+                    <input type="button" value="+" class="btn btn-danger col-md-2" id="add-alimento"/>
+                    @Html.ValidationMessageFor(model => model.NombreAlimento, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label>Alimentos que vas a ingerir</label>
-            <div class="col-md-10">
-                <table id="tabla-listado-alimentos" class="table table-dark">
-                </table>
+            <div class="form-group row">
+                <label>Alimentos que vas a ingerir</label>
+                <div class="col-md-10">
+                    <table id="tabla-listado-alimentos" class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Carbohidratos</th>
+                                <th scope="col">Cantidad</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div id="div-plato-mediano" class="col-xs-12 col-md-6">
-                <img src="~/Resources/Metodo_Del_Plato.png" width="200" height="200" />
-                <input type="checkbox" name="platoMediano" />Plato Mediano
+            <div class="form-group row">
+                <div id="div-plato-mediano" class="col-xs-6 col-md-6">
+                    <img src="~/Resources/Metodo_Del_Plato.png" class="col-xs-5 col-md-5" />
+                    <input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning-1" autocomplete="off" />
+                    <div class="[ btn-group ]">
+                        <label for="fancy-checkbox-warning-1" class="[ btn btn-warning ]">
+                            <span class="[ glyphicon glyphicon-ok ]"></span>
+                            <span><i class="fas fa-check"></i></span>
+                        </label>
+                        <label for="fancy-checkbox-warning" class="[ btn btn-default active ]">
+                            Plato Mediano
+                        </label>
+                    </div>
+                </div>
+                <div id="div-plato-grande" class="col-xs-6 col-md-6">
+                    <img src="~/Resources/Metodo_Del_Plato.png" class="col-md-9" />
+                    <input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning-2" autocomplete="off" />
+                    <div class="[ btn-group ]">
+                        <label for="fancy-checkbox-warning-2" class="[ btn btn-warning ]">
+                            <span class="[ glyphicon glyphicon-ok ]"></span>
+                            <span><i class="fas fa-check"></i></span>
+                        </label>
+                        <label for="fancy-checkbox-warning" class="[ btn btn-default active ]">
+                            Plato Grande
+                        </label>
+                    </div>
+                </div>
             </div>
-            <div id="div-plato-mediano" class="col-xs-12 col-md-6">
-                <img src="~/Resources/Metodo_Del_Plato.png" width="300" height="300" />
-                <input type="checkbox" name="platoGrande" />Plato Grande
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.IntensidadDeporte, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @{
+                        List<SelectListItem> intensidadDeporte = new List<SelectListItem>();
+                        intensidadDeporte.Add(new SelectListItem { Text = "Leve", Value = "Leve" });
+                        intensidadDeporte.Add(new SelectListItem { Text = "Medio", Value = "Medio" });
+                        intensidadDeporte.Add(new SelectListItem { Text = "Fuerte", Value = "Fuerte" });
+                    }
+                    @Html.DropDownListFor(model => model.IntensidadDeporte, intensidadDeporte, "-- Select Status --", new { htmlAttributes = new { @class = "form-control select-intensidad-ejericio" } })
+                    @Html.ValidationMessageFor(model => model.IntensidadDeporte, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.IntensidadDeporte, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @{
-                    List<SelectListItem> intensidadDeporte = new List<SelectListItem>();
-                    intensidadDeporte.Add(new SelectListItem { Text = "Leve", Value = "Leve" });
-                    intensidadDeporte.Add(new SelectListItem { Text = "Medio", Value = "Medio" });
-                    intensidadDeporte.Add(new SelectListItem { Text = "Fuerte", Value = "Fuerte" });
-                }
-                @Html.DropDownListFor(model => model.IntensidadDeporte, intensidadDeporte, "-- Select Status --", new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.IntensidadDeporte, "", new { @class = "text-danger" })
+            <div class="form-group row">
+                @Html.LabelFor(model => model.FechaHora, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FechaHora, new { htmlAttributes = new { @class = "form-control, fecha-hora" } })
+                    @Html.ValidationMessageFor(model => model.FechaHora, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.FechaHora, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaHora, new { htmlAttributes = new { @class = "form-control, fecha-hora" } })
-                @Html.ValidationMessageFor(model => model.FechaHora, "", new { @class = "text-danger" })
+            <div class="form-group row">
+                @Html.TextBoxFor(model => model.Id_Usuario, new { @Value = ViewBag.Id_Usuario, @class = "textbox-idUsuario-hide" })
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.TextBoxFor(model => model.Id_Usuario, new { @Value = ViewBag.Id_Usuario, @class = "textbox-idUsuario-hide" })
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
             </div>
         </div>
     </div>
@@ -89,32 +113,18 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@
+
 
 <script>
     $(document).ready(function () {
-        @{
-            List<SelectListItem> cantidadComida = new List<SelectListItem>();
-            cantidadComida.Add(new SelectListItem { Text = "Un octavo", Value = "Octavo" });
-            cantidadComida.Add(new SelectListItem { Text = "Un cuarto", Value = "Cuarto" });
-            cantidadComida.Add(new SelectListItem { Text = "Medio", Value = "Medio" });
-            cantidadComida.Add(new SelectListItem { Text = "Entero", Value = "Entero" });
-        }@
         $("#add-alimento").click(function () {
             if ($("#select-alimentos option:selected").text() != "--Escoge un alimento--") {
                 var carbohidratosAlimento = $("#select-alimentos").val();
                 var nombreAlimento = $("#select-alimentos option:selected").text();
-                $("#tabla-listado-alimentos").append("<tr><td>" + nombreAlimento + "</td><td>" + carbohidratosAlimento + "</td><td>" + cantidadComida + "</tr>");
+                $("#tabla-listado-alimentos").append("<tr><td>" + nombreAlimento + "</td><td>" + carbohidratosAlimento +
+                    "</td><td><select class='select-cantidad-alimento col-xs-3'><option value='octavo'>Nada</option><option value='octavo'>Un octavo</option><option value='cuarto'>Un cuarto</option><option value='medio'>Medio</option><option value='entero'>Entero</option></select></td></tr>");
             }
             else alert("Esto no es un alimento");
-
-            $(function () {
-                $(".date-select").datepicker({ dateFormat: 'dd.mm.yy' });
-                $(".date-select").datepicker($.datepicker.regional['sl']);
-            });
-            $(function () {
-                $("#fecha-hora").datepicker('setDate', new Date());
-            });
         });
     });
 </script>

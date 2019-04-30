@@ -1,15 +1,31 @@
+/*_________________________________________________________________________*/
+/*                           LAYOUT COMMON STYLE                           */
 
-
-
-        /*_________________________________________________________________________*/
-        /*       LAYOUT COMMON STYLE                                            */
+.select-cantidad-alimento, #IntensidadDeporte {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+    border-radius: 5px;
+    background-color: cadetblue;
+}
+.select-intensidad-ejericio {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+    border-radius: 5px;
+    background-color: cadetblue;
+}
+#tabla-listado-alimentos {
+    border-radius: 5px;
+    text-align: center;
+}
 
 .textbox-idUsuario-hide {
     visibility: hidden;
 }
 
-        @media (min-width: 1200px) {
-        }
+@media (min-width: 1200px) {
+}
 
 @media (min-width: 1000px) {
 
@@ -18,97 +34,95 @@
     }
 
 }
-        /* Anything Smaller than Large  */
-        @media (max-width: 600px) {
+/* Anything Smaller than Large  */
+@media (max-width: 600px) {
 
-            #btn-profile-complete-id {
-                visibility: visible;
-            }
-            #btn-profile-icon-id {
-                display: none;
-            }
+    #btn-profile-complete-id {
+        visibility: visible;
+    }
+    #btn-profile-icon-id {
+        display: none;
+    }
 
-            #menu-average-id {
-                background-color: brown;
-            }
+    #menu-average-id {
+        background-color: brown;
+    }
 
-            #menu-food-id {
-                background-color: darkolivegreen;
-            }
+    #menu-food-id {
+        background-color: darkolivegreen;
+    }
 
-            #menu-settings-id {
-                background-color: darkslateblue;
-            }
+    #menu-settings-id {
+        background-color: darkslateblue;
+    }
 
-            .h1-title-class {
-                font-size: x-large;
-            }
-        }
+    .h1-title-class {
+        font-size: x-large;
+    }
+}
 
-        #btn-profile-complete-id {
-                display:none;
-        }
+#btn-profile-complete-id {
+        display:none;
+}
 
-        #btn-profile-icon-id {
-            visibility: visible;
-        }
+#btn-profile-icon-id {
+    visibility: visible;
+}
 
-        .nav-color-class {
-            color: whitesmoke;
-            margin-top: 1%;
-            margin-bottom: 1%;
-        }
+.nav-color-class {
+    color: whitesmoke;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
 
-        .body-background-class {
-            background-color: lightblue;
-            margin-bottom: 10%;
-        }
+.body-background-class {
+    background-color: lightblue;
+    margin-bottom: 10%;
+}
 
-        .footer-content-class {
-            background-color: darkslategrey;
-            width: 100%;
-            height: 5%;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-        }
+.footer-content-class {
+    background-color: darkslategrey;
+    width: 100%;
+    height: 5%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
 
-        .body-center-block-class {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 90%;
-            margin-top:10%
-        }
+.body-center-block-class {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-top:10%
+}
 
-        /*____________________________________________________________________________________*/
+/*____________________________________________________________________________________*/
 
-        /*                                              */
+#blockAnalysis
+{
+    margin-top: 5%;
+}
 
-        #blockAnalysis
-        {
-            margin-top: 5%;
-        }
+#sendButton {
+    position: relative;
+    float: right;
+}
 
-        #sendButton {
-            position: relative;
-            float: right;
-        }
+#labLat {
+    position: relative;
+    float: right;
+    margin: 1%;
+}
 
-        #labLat {
-            position: relative;
-            float: right;
-            margin: 1%;
-        }
-
-        #inLat {
-            position: relative;
-            float: left;
-            margin: 1%;
-        }
+#inLat {
+    position: relative;
+    float: left;
+    margin: 1%;
+}
 
 
-        /*___________________________________________________________________________-*/
+/*___________________________________________________________________________-*/
 
 
 .inp-paginator-class {
@@ -125,9 +139,9 @@
     margin-bottom: 1.75em;
 }
 
-    #exPagination li {
-        display: inline-block;
-    }
+#exPagination li {
+    display: inline-block;
+}
 
 .page-content {
     background: #eee;
@@ -136,39 +150,64 @@
     width: 100%;
     max-width: 660px;
 }
-        /*____________________________________________________________________________________*/
+/*____________________________________________________________________________________*/
                     
-        /*                INPUT BOX FONT AWEOME & ERRORS CONTROLERS DAVID                     */
+/*                INPUT BOX FONT AWEOME & ERRORS CONTROLERS DAVID                     */
 
-        .input-text-error-class::placeholder {
-            color: red;
-        }
+.input-text-error-class::placeholder {
+    color: red;
+}
 
-        .input-text-error-class {
-            color: red;
-        }
+.input-text-error-class {
+    color: red;
+}
 
-        .input-button-submit-class {
-            border: solid 1px;
-        }
+.input-button-submit-class {
+    border: solid 1px;
+}
 
-        .input-button-login-class {
-            padding: 10px;
-            font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: inherit;
-        }
+.input-button-login-class {
+    padding: 10px;
+    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
 
-        .div-align-center-class {
-            display: grid;
-            min-height: 60vh;
-            align-items: center;
-        }
+.div-align-center-class {
+    display: grid;
+    min-height: 60vh;
+    align-items: center;
+}
 
-        /*Input email from View emailSignIn & SignUp*/
-        #emailSignIn, #inputEmailSingUp {
-            background-color: #F0F0F0;
-            color: #303030;
-            pointer-events: none;
-        }
+/*Input email from View emailSignIn & SignUp*/
+#emailSignIn, #inputEmailSingUp {
+    background-color: #F0F0F0;
+    color: #303030;
+    pointer-events: none;
+}
+
+/*Css for custom checkbox*/
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;
+}

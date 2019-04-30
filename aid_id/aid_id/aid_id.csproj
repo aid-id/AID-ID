@@ -138,6 +138,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Alimentos\AlimentosController.cs" />
+    <Compile Include="Controllers\AverageController.cs" />
     <Compile Include="Controllers\InsulineResultsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NuevoAnalisisController.cs" />
@@ -213,6 +214,7 @@
     <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Shared\_Logged.cshtml" />
     <Content Include="Views\Login\Settings.cshtml" />
+    <Content Include="Views\Average\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

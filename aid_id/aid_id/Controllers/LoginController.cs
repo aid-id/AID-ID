@@ -46,8 +46,6 @@ namespace aid_id.Controllers
             {
                 return View("Index");
             }
-            
-
         }
         //POST FORM FROM -> SignInForm
         //http://localhost:51356/Login/Verify
@@ -91,7 +89,6 @@ namespace aid_id.Controllers
                         cookieLogin.Expires = DateTime.Now.AddYears(1); //the cookie is deleted after one year
                         ControllerContext.HttpContext.Response.SetCookie(cookieEmail);
                         return RedirectToAction("Logged", "Login");
-                        //return View("Logged");
                     }
                     catch (InvalidOperationException) //If login fail...
                     {
@@ -201,6 +198,7 @@ namespace aid_id.Controllers
                 return View("Index");
             }
         }
+
         //Logout -> Delete cookies
         //http://localhost:51356/Login/Logout
         public ActionResult LogOut()
@@ -211,6 +209,66 @@ namespace aid_id.Controllers
             Response.SetCookie(cookieLogin);
             //return View("Index");
             return RedirectToAction("Index", "Login");
+        }
+
+        //Logout -> API INFO EMAIL COOCKIE QUERY DATABASE
+        //http://localhost:51356/Login/Info
+        public JsonResult Info()
+        {
+            try
+            {
+                using (Aid_idContext db = new Aid_idContext())
+                {
+                    try
+                    {
+                        Usuarios user = new Usuarios();
+                        //Conection with database
+                        string connetionString = "";
+                        connetionString = @"Server=tcp:aid-id.database.windows.net,1433;Initial Catalog=db_diabetes;Persist Security Info=False;User ID=aidid;Password=BD123456~;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                        SqlConnection cnn;
+                        cnn = new SqlConnection(connetionString);
+                        cnn.Open();
+                        //Variables
+                        SqlCommand command;
+                        SqlDataReader dataReader;
+                        String sql, Output = "";
+                        //Read Coockie
+                        string value = "";
+                        var cookieEmail = ControllerContext.HttpContext.Request.Cookies["cookieEmail"];
+                        if (cookieEmail != null)
+                        {
+                            value = cookieEmail.Value;
+                        }
+                        //query
+                        sql = "select * from usuarios where correo = '" + value + "'";
+                        //Command Statement
+                        command = new SqlCommand(sql, cnn);
+
+                        dataReader = command.ExecuteReader();
+                        List<string> Fields = new List<string>();
+                        while (dataReader.Read())
+                        {
+                            for (int col = 0; col < dataReader.FieldCount; col++)
+                            {
+                                Fields.Add(dataReader.GetName(col).ToString() + " : " + dataReader.GetValue(col).ToString());
+                            }
+                        }
+                        cnn.Close();
+
+                        return Json(Fields, JsonRequestBehavior.AllowGet);
+                    }
+                    catch (InvalidOperationException ex)
+                    {
+                        var error = ex.Message;
+                        return Json(error);
+                    }
+                }
+            }
+            catch (System.Data.SqlClient.SqlException sq)
+            {
+                var error = sq.Message;
+                return Json(error);
+            }
         }
     }
 }

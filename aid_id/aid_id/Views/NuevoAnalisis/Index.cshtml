@@ -46,6 +46,19 @@
             </div>
 
             <div class="form-group row">
+                <div id="div-plato-grande" class="col-xs-6 col-md-6">
+                    <img src="~/Resources/Metodo_Del_Plato.png" class="col-md-7" />
+                    <input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning-2" autocomplete="off" />
+                    <div class="[ btn-group ]">
+                        <label for="fancy-checkbox-warning-2" class="[ btn btn-warning ]">
+                            <span class="[ glyphicon glyphicon-ok ]"></span>
+                            <span><i class="fas fa-check"></i></span>
+                        </label>
+                        <label for="fancy-checkbox-warning" class="[ btn btn-default active ]">
+                            Plato Grande
+                        </label>
+                    </div>
+                </div>
                 <div id="div-plato-mediano" class="col-xs-6 col-md-6">
                     <img src="~/Resources/Metodo_Del_Plato.png" class="col-xs-5 col-md-5" />
                     <input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning-1" autocomplete="off" />
@@ -59,23 +72,10 @@
                         </label>
                     </div>
                 </div>
-                <div id="div-plato-grande" class="col-xs-6 col-md-6">
-                    <img src="~/Resources/Metodo_Del_Plato.png" class="col-md-9" />
-                    <input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning-2" autocomplete="off" />
-                    <div class="[ btn-group ]">
-                        <label for="fancy-checkbox-warning-2" class="[ btn btn-warning ]">
-                            <span class="[ glyphicon glyphicon-ok ]"></span>
-                            <span><i class="fas fa-check"></i></span>
-                        </label>
-                        <label for="fancy-checkbox-warning" class="[ btn btn-default active ]">
-                            Plato Grande
-                        </label>
-                    </div>
-                </div>
             </div>
 
             <div class="form-group row">
-                @Html.LabelFor(model => model.IntensidadDeporte, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.IntensidadDeporte, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-10">
                     @{
                         List<SelectListItem> intensidadDeporte = new List<SelectListItem>();
@@ -89,29 +89,25 @@
             </div>
 
             <div class="form-group row">
-                @Html.LabelFor(model => model.FechaHora, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.FechaHora, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.FechaHora, new { htmlAttributes = new { @class = "form-control, fecha-hora" } })
-                    @Html.ValidationMessageFor(model => model.FechaHora, "", new { @class = "text-danger" })
+                    <input type="datetime-local" />                
+                    @*@Html.EditorFor(model => model.FechaHora, new { htmlAttributes = new { @class = "form-control, fecha-hora" } })
+                    @Html.ValidationMessageFor(model => model.FechaHora, "", new { @class = "text-danger" })*@
                 </div>
             </div>
-
             <div class="form-group row">
                 @Html.TextBoxFor(model => model.Id_Usuario, new { @Value = ViewBag.Id_Usuario, @class = "textbox-idUsuario-hide" })
             </div>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                    <input type="submit" value="Create" class="btn btn-info" />
                 </div>
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 
 

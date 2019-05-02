@@ -22,6 +22,7 @@ namespace aid_id.Models
         [Display(Name = "Intensidad del deporte")]
         public SelectList IntensidadDeporte { get; set; }
 
+        [Display(Name = "Fecha")]
         [DataType(DataType.Date)]
         public DateTime FechaHora { get; set; }
 

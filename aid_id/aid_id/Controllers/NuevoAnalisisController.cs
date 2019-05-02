@@ -43,15 +43,10 @@ namespace aid_id.Controllers
             {
                 db.Analisis.Add(analisis);
                 db.SaveChanges();
-                return RedirectToAction("ResultInsulina");
+                return RedirectToAction("InsulineResults", "InsulineResults");
             }
 
             return View(analisis);
-        }
-
-        public ActionResult ResultInsulina()
-        {
-            return View();
         }
     }
 }

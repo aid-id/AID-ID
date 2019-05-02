@@ -40,7 +40,7 @@ namespace aid_id.Controllers
             }
             if (value == "1")
             {
-                return View("Logged");
+                return RedirectToAction("Index", "NuevoAnalisis");
             }
             else
             {

@@ -73,19 +73,20 @@ namespace aid_id.Controllers
                         //SELECT CORREO FROM USUARIOS WHERE CORREO = DATAINPUT LIMIT 1; DATA INPUT EXAMPLE = raulcaro38@gmail.com;
                         var email = Request.Form["inputEmail"]; //raulcaro38@gmail.com
                         var pass = Request.Form["inputPass"]; //123abc
+                        string emailGood = email.Substring(email.IndexOf(' ') + 1);
                         Sha1 encript = new Sha1();
                         var passEncripted = encript.GetSHA1(pass);
                         //https://sha1.gromweb.com/
                         /*String -> 123abc =  SHA1 -> 4be30d9814c6d4e9800e0d2ea9ec9fb00efa887b*/
                         var res = (from Usuarios u in db.Usuarios
-                                   where u.Correo == EmailConfirmed //raulcaro38@gmail.com
+                                   where u.Correo == emailGood //raulcaro38@gmail.com
                                    where u.Passcode == passEncripted //123abc
                                    select u).First();
                         //Cookies Save
                         HttpCookie cookieLogin = new HttpCookie("cookieLogin", "1");
                         cookieLogin.Expires = DateTime.Now.AddYears(1); //the cookie is deleted after one year
                         ControllerContext.HttpContext.Response.SetCookie(cookieLogin);
-                        HttpCookie cookieEmail = new HttpCookie("cookieEmail", email);
+                        HttpCookie cookieEmail = new HttpCookie("cookieEmail", emailGood);
                         cookieLogin.Expires = DateTime.Now.AddYears(1); //the cookie is deleted after one year
                         ControllerContext.HttpContext.Response.SetCookie(cookieEmail);
                         return RedirectToAction("Logged", "Login");
